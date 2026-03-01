@@ -1,0 +1,14 @@
+[
+  {
+    "prompt": "Fetch me the name and possibly the website of the research lab run by professor Zhicheng Liu",
+    "answer": "Professor Zhicheng Liu runs the **Human-Data Interaction Group** (also referred to as Human-Data Interaction Research Group) at the University of Maryland, College Park.\n\n**Lab Website:** https://hdi.cs.umd.edu/\n\nThe lab is affiliated with the Human-Computer Interaction Lab (HCIL) at UMD and focuses on interactive data analysis and data-driven visual communication by synthesizing human-centered methodologies and artificial intelligence."
+  },
+  {
+    "prompt": "Go to https://www.cs.umd.edu/people/faculty and fetch me the email address of Prof. Zhicheng Liu?",
+    "answer": "The email address of Prof. Zhicheng Liu is: leozcliu@umd.edu"
+  },
+  {
+    "prompt": "Go to https://www.cs.umd.edu/people/faculty and fetch me the email address of Prof. Zhicheng Liu?",
+    "answer": "Prof. Zhicheng Liu's email address is: leozcliu@umd.edu"
+  }
+]
