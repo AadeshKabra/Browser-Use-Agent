@@ -10,5 +10,33 @@
   {
     "prompt": "Go to https://www.cs.umd.edu/people/faculty and fetch me the email address of Prof. Zhicheng Liu?",
     "answer": "Prof. Zhicheng Liu's email address is: leozcliu@umd.edu"
+  },
+  {
+    "prompt": "Go to https://www.cs.umd.edu/people/faculty and fetch me the email address of Prof. Zhicheng Liu?",
+    "answer": "Prof. Zhicheng Liu's email address is: leozcliu@umd.edu"
+  },
+  {
+    "prompt": "Go to https://www.cs.umd.edu/people/faculty and fetch me the email address of Prof. Zhicheng Liu?",
+    "answer": "Prof. Zhicheng Liu's email address is: leozcliu@umd.edu"
+  },
+  {
+    "prompt": "Go to https://www.cs.umd.edu/people/faculty and fetch me the email address of Prof. Zhicheng Liu?",
+    "answer": "The email address of Prof. Zhicheng Liu is: leozcliu@umd.edu"
+  },
+  {
+    "prompt": "Go to https://www.cs.umd.edu/people/faculty and fetch me the email address of Prof. Zhicheng Liu?",
+    "answer": "leozcliu@umd.edu"
+  },
+  {
+    "prompt": "Go to https://www.cs.umd.edu/people/faculty and fetch me the research domain of Prof. Zhicheng Liu?",
+    "answer": "Prof. Zhicheng Liu's research domains are: 1) Human Computer Interaction, 2) Graphics Visualization and VR AR, 3) Machine Learning and Data Science."
+  },
+  {
+    "prompt": "Go to https://www.cs.umd.edu/people/faculty and Fetch me the name and possibly the website of the research lab run by professor Zhicheng Liu",
+    "answer": "None"
+  },
+  {
+    "prompt": "Go to https://www.cs.umd.edu/people/faculty and Fetch me the name and possibly the website of the research lab run by professor Zhicheng Liu",
+    "answer": "Professor: Zhicheng Liu\nLab Name: Human-Data Interaction Research Group\nLab Website: https://hdi.cs.umd.edu/\nAdditional context: The lab is a research group in the Department of Computer Science at University of Maryland, College Park. They are affiliated with the Human-Computer Interaction Lab (HCIL) at UMD. The lab's mission is to support interactive data analysis and data-driven visual communication by synthesizing human-centered methodologies and artificial intelligence. Their work spans the areas of data visualization, visual analytics, human-computer interaction, and machine learning."
   }
 ]
