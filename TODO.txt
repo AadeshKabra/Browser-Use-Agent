@@ -1,3 +1,8 @@
 1. Overleaf MCP to update resume
 2. Gmail MCP to send mails
 3. Agent finetuned on writing perfect Cold-emails
+
+Can we finetune ollama model on Web surfing instructions datasets to see if any improvement in performance?
+
+Few-shot prompting and later SFT
+

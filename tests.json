@@ -38,5 +38,25 @@
   {
     "prompt": "Go to https://www.cs.umd.edu/people/faculty and Fetch me the name and possibly the website of the research lab run by professor Zhicheng Liu",
     "answer": "Professor: Zhicheng Liu\nLab Name: Human-Data Interaction Research Group\nLab Website: https://hdi.cs.umd.edu/\nAdditional context: The lab is a research group in the Department of Computer Science at University of Maryland, College Park. They are affiliated with the Human-Computer Interaction Lab (HCIL) at UMD. The lab's mission is to support interactive data analysis and data-driven visual communication by synthesizing human-centered methodologies and artificial intelligence. Their work spans the areas of data visualization, visual analytics, human-computer interaction, and machine learning."
+  },
+  {
+    "prompt": "What lab does Prof. Abhinav Bhatele runs in UMD College Park?",
+    "answer": "Prof. Abhinav Bhatele runs the Parallel Software and Systems Group (PSSG) at UMD College Park. This was confirmed by his faculty profile page which states he is 'Director, Parallel Software and Systems Group (PSSG)' and the lab's official website at pssg.cs.umd.edu."
+  },
+  {
+    "prompt": "What lab does Prof. Abhinav Bhatele runs in UMD College Park?",
+    "answer": "Prof. Abhinav Bhatele runs the Parallel Software and Systems Group (PSSG) at UMD College Park."
+  },
+  {
+    "prompt": "What lab does Prof. Abhinav Bhatele runs in UMD College Park?",
+    "answer": "None"
+  },
+  {
+    "prompt": "What lab does Prof. Abhinav Bhatele runs in UMD College Park?",
+    "answer": "Parallel Software and Systems Group"
+  },
+  {
+    "prompt": "Go to https://www.cs.umd.edu/people/faculty and Fetch me the name and possibly the website of the research lab run by professor Abhinav Bhatele?",
+    "answer": "Professor: Abhinav Bhatele\nLab Name: Parallel Software and Systems Group (PSSG)\nLab Website: https://pssg.cs.umd.edu/"
   }
 ]
