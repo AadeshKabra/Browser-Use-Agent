@@ -1,0 +1,22 @@
+[
+    {
+        "task": "Find the research lab run by professor Abhinav Bhatele at UMD",
+        "expected_answer": "Parallel Software and Systems Group",
+        "category": "faculty_lookup"
+    },
+    {
+        "task": "Find the email of professor Hal Daume at UMD CS",
+        "expected_answer": "hal@umd.edu",
+        "category": "faculty_lookup"
+    },
+    {
+        "task": "What is the deadline for NeurIPS 2025 paper submission",
+        "expected_answer": "May 2025",
+        "category": "event_lookup"
+    },
+    {
+        "task": "Find the top trending repository on GitHub today",
+        "expected_answer": null,
+        "category": "dynamic_content"
+    }
+]

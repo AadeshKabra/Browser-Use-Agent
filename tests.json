@@ -58,5 +58,29 @@
   {
     "prompt": "Go to https://www.cs.umd.edu/people/faculty and Fetch me the name and possibly the website of the research lab run by professor Abhinav Bhatele?",
     "answer": "Professor: Abhinav Bhatele\nLab Name: Parallel Software and Systems Group (PSSG)\nLab Website: https://pssg.cs.umd.edu/"
+  },
+  {
+    "prompt": "Go to https://www.cs.umd.edu/people/faculty and Fetch me the name and possibly the website of the research lab run by professor Abhinav Bhatele?",
+    "answer": "Professor Name: Abhinav Bhatele\nResearch Lab: Parallel Software and Systems Group (PSSG)\nLab Website: https://pssg.cs.umd.edu/"
+  },
+  {
+    "prompt": "Go to https://www.cs.umd.edu/people/faculty and Fetch me the emailid of professor Abhinav Bhatele?",
+    "answer": "bhatele@cs.umd.edu"
+  },
+  {
+    "prompt": "Go to https://www.cs.umd.edu/people/faculty and Fetch me the emailid of professor Abhinav Bhatele?",
+    "answer": "Professor Abhinav Bhatele's email ID is: bhatele@cs.umd.edu"
+  },
+  {
+    "prompt": "What is the lab run by Prof. Abhinav Bhatele?",
+    "answer": "Parallel Software and Systems Group"
+  },
+  {
+    "prompt": "Can you give me the link for Paralle Software and Systems Group Lab?",
+    "answer": "The link to the Parallel Software and Systems Group Lab is: https://pssg.cs.umd.edu/"
+  },
+  {
+    "prompt": "Can you give me the latest research paper published by Prof. Zhicheng Liu?",
+    "answer": "The latest research paper by Prof. Zhicheng Liu is:\n\n**Title:** Contextualized Dynamic Explanations: A Vision\n\n**Authors:** Zhicheng Liu, Jason H Li, Greg Briskin\n\n**Venue:** 1st Workshop on GenAI, Agents, and the Future of VIS\n\n**Year:** 2025\n\nThis paper appears at the top of his publications list on his personal website (zcliu.cs.umd.edu), indicating it is his most recent publication."
   }
 ]

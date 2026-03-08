@@ -1,0 +1,66 @@
+[
+  {
+    "task": "Find the research lab run by professor Abhinav Bhatele at UMD",
+    "category": "faculty_lookup",
+    "no_few_shot": {
+      "answer": "The research lab run by Professor Abhinav Bhatele at UMD is the **Parallel Software and Systems Group**.",
+      "steps": 10,
+      "time": 154.2,
+      "correct": true
+    },
+    "few_shot": {
+      "answer": "Parallel Software and Systems Group",
+      "steps": 4,
+      "time": 91.9,
+      "correct": true
+    }
+  },
+  {
+    "task": "Find the email of professor Hal Daume at UMD CS",
+    "category": "faculty_lookup",
+    "no_few_shot": {
+      "answer": "None",
+      "steps": 28,
+      "time": 404.5,
+      "correct": false
+    },
+    "few_shot": {
+      "answer": "hal@umiacs.umd.edu",
+      "steps": 4,
+      "time": 47.3,
+      "correct": false
+    }
+  },
+  {
+    "task": "What is the deadline for NeurIPS 2025 paper submission",
+    "category": "event_lookup",
+    "no_few_shot": {
+      "answer": "The deadline for NeurIPS 2025 paper submission is **May 15, 2025 AoE** (Anywhere on Earth).\n\nAdditional relevant deadlines:\n- Abstract submission deadline: May 11, 2025 AoE\n- Technical appendices and supplemental materials deadline: May 22, 2025 AoE\n- Author notification: September 18, 2025 AoE\n- Camera-ready: October 23, 2025 AoE",
+      "steps": 4,
+      "time": 52.3,
+      "correct": false
+    },
+    "few_shot": {
+      "answer": "The deadline for NeurIPS 2025 paper submission is May 15, 2025 AOE (Anywhere on Earth). Note: The abstract submission deadline is May 11, 2025 AoE, and the full paper submission deadline is May 15, 2025 AOE.",
+      "steps": 6,
+      "time": 81.7,
+      "correct": false
+    }
+  },
+  {
+    "task": "Find the top trending repository on GitHub today",
+    "category": "dynamic_content",
+    "no_few_shot": {
+      "answer": "The top trending repository on GitHub today is **openclaw/openclaw** with **4,842 stars today**.\n\n**Repository Details:**\n- **Name:** openclaw / openclaw\n- **Description:** Your own personal AI assistant. Any OS. Any Platform. The lobster way. \ud83e\udd9e\n- **Today's Stars:** 4,842\n- **Total Stars:** 280,050\n- **Programming Language:** TypeScript\n- **Forks:** 53,459",
+      "steps": 4,
+      "time": 209.6,
+      "correct": true
+    },
+    "few_shot": {
+      "answer": "GoogleCloudPlatform / generative-ai",
+      "steps": 2,
+      "time": 35.6,
+      "correct": true
+    }
+  }
+]

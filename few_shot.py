@@ -1,0 +1,141 @@
+# from datasets import load_dataset
+
+# ds = load_dataset("McGill-NLP/WebLINX", "weblinx-full", split="train", streaming=True)
+
+# for i, item in enumerate(ds):
+#     print(item.keys())
+#     break
+
+import json
+
+
+FEW_SHOT_EXAMPLES = [
+  {
+    "task": "Find the research lab run by professor Abhinav Bhatele at UMD",
+    "steps": [
+      "go_to_url: https://www.cs.umd.edu/people/faculty",
+      "click_element: Abhinav Bhatele",
+      "done: Parallel Software and Systems Group"
+    ]
+  },
+  {
+    "task": "Find the office location of professor Hal Daume at UMD CS",
+    "steps": [
+      "go_to_url: https://www.cs.umd.edu/people/faculty",
+      "click_element: Hal Daume",
+      "done: Extract office number from profile"
+    ]
+  },
+  {
+    "task": "What are the admission requirements for UMD CS PhD program",
+    "steps": [
+      "go_to_url: https://www.cs.umd.edu/grad/catalog",
+      "click_element: Admission Requirements or PhD Program",
+      "done: Extract admission requirements"
+    ]
+  },
+  {
+    "task": "Find the latest research papers published by Stanford NLP group",
+    "steps": [
+      "go_to_url: https://nlp.stanford.edu/pubs/",
+      "done: Extract list of recent publications"
+    ]
+  },
+  {
+    "task": "What is the price of iPhone 16 Pro on Apple's website",
+    "steps": [
+      "go_to_url: https://www.apple.com/shop/buy-iphone",
+      "click_element: iPhone 16 Pro",
+      "done: Extract starting price"
+    ]
+  },
+  {
+    "task": "Find the hours of operation for the McKeldin Library at UMD",
+    "steps": [
+      "go_to_url: https://www.lib.umd.edu/visit/hours",
+      "done: Extract McKeldin Library hours"
+    ]
+  },
+  {
+    "task": "Check the current weather in College Park, Maryland",
+    "steps": [
+      "go_to_url: https://weather.com",
+      "input_text: College Park, MD in search box",
+      "click_element: Search or College Park result",
+      "done: Extract current temperature and conditions"
+    ]
+  },
+  {
+    "task": "Find the top trending repositories on GitHub today",
+    "steps": [
+      "go_to_url: https://github.com/trending",
+      "done: Extract list of trending repositories"
+    ]
+  },
+  {
+    "task": "Look up the schedule for UMD CS course CMSC828A",
+    "steps": [
+      "go_to_url: https://app.testudo.umd.edu/soc/",
+      "input_text: CMSC in search box",
+      "click_element: Search",
+      "click_element: CMSC828A",
+      "done: Extract course schedule and instructor"
+    ]
+  },
+  {
+    "task": "Find how many citations a paper titled 'Attention is All You Need' has on Google Scholar",
+    "steps": [
+      "go_to_url: https://scholar.google.com",
+      "input_text: Attention is All You Need",
+      "click_element: Search",
+      "done: Extract citation count from result"
+    ]
+  },
+  {
+    "task": "Find the menu for a pizza restaurant near College Park MD",
+    "steps": [
+      "go_to_url: https://www.google.com/maps",
+      "input_text: pizza restaurant College Park MD",
+      "click_element: First restaurant result",
+      "click_element: Menu",
+      "done: Extract menu items and prices"
+    ]
+  },
+  {
+    "task": "What is the deadline for NeurIPS 2025 paper submission",
+    "steps": [
+      "go_to_url: https://neurips.cc",
+      "click_element: Dates or Call for Papers",
+      "done: Extract submission deadline"
+    ]
+  },
+  {
+    "task": "Find the return policy on Amazon",
+    "steps": [
+      "go_to_url: https://www.amazon.com/gp/help/customer/display.html",
+      "click_element: Returns and Refunds",
+      "done: Extract return policy details"
+    ]
+  },
+  {
+    "task": "Look up the bus schedule for Route 104 from UMD campus",
+    "steps": [
+      "go_to_url: https://www.transportation.umd.edu/shuttle",
+      "click_element: Route 104",
+      "done: Extract schedule and stops"
+    ]
+  },
+  {
+    "task": "Find the LinkedIn profile of a company called Modular AI",
+    "steps": [
+      "go_to_url: https://www.linkedin.com/company/modular-ai",
+      "done: Extract company description and details"
+    ]
+  }
+]
+
+
+if __name__ == "__main__":
+    with open("few_shot_examples.json", "w") as f:
+        json.dump(FEW_SHOT_EXAMPLES, f, indent=2)
+    print(f"Saved {len(FEW_SHOT_EXAMPLES)} examples to few_shot_examples.json")

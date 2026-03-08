@@ -10,6 +10,7 @@ import inspect
 import time
 from collections import deque
 from threading import Lock
+from few_shot import FEW_SHOT_EXAMPLES
 
 
 app = Flask(__name__)
@@ -32,7 +33,16 @@ class CustomSystemPrompt(SystemPrompt):
     def important_rules(self):
         existing = super().important_rules()
         return existing + "\nSYSTEM_PROMPT"
-    
+
+
+def fortmat_few_shot_examples(examples, n=3):
+    formatted = ""
+    for ex in examples[:n]:
+        steps = "\n".join(f"  {i+1}. {s}" for i, s in enumerate(ex['steps']))
+        formatted += f"\nExample:\nTask: {ex['task']}\nSteps:\n{steps}\n"
+
+    return formatted
+
 
 def memory_callback(data):
     with memory_lock:
@@ -40,9 +50,19 @@ def memory_callback(data):
 
 
 def generate_subtasks(question):
-    prompt = f"""
-        Can you break the following task into a set of instructions so that a browser agent can easily follow the instructions to complete the task.
-        Task: {question}
+    few_shot_string = fortmat_few_shot_examples(FEW_SHOT_EXAMPLES)
+    # prompt = f"""
+    #     Can you break the following task into a set of instructions so that a browser agent can easily follow the instructions to complete the task.
+    #     Task: {question}
+    # """
+
+    prompt = f"""You are a browser agent. Complete tasks efficiently in as few steps as possible.
+    Go directly to relevant URLs when possible instead of searching Google.
+
+    {few_shot_string}
+
+    Now complete this task efficiently:
+    Task: {question}
     """
     response = llm.invoke(prompt)
     return response.content
