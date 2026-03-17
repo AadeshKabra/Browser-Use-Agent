@@ -1,0 +1,60 @@
+{
+  "task": "Find the current stock price of NVIDIA",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to google finance'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://finance.google.com'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://finance.google.com",
+        "title": "Google Finance"
+      },
+      "llm_output": {
+        "current_state": "page_summary='google finance homepage', evaluation_previous_goal='Success - navigated to google finance', memory='None', next_goal='search for NVIDIA stock price'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='NVIDIA stock price'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://finance.google.com/search?q=NVIDIA+stock+price",
+        "title": "NVIDIA stock price - Google Search"
+      },
+      "llm_output": {
+        "current_state": "page_summary='search results for NVIDIA stock price', evaluation_previous_goal='Success - searched for NVIDIA stock price', memory='NVIDIA stock price', next_goal='click on NVIDIA stock price result'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=2, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://finance.google.com/quote/NVDA:NASDAQ",
+        "title": "NVIDIA Corporation - NASDAQ"
+      },
+      "llm_output": {
+        "current_state": "page_summary='NVIDIA stock price page', evaluation_previous_goal='Success - navigated to NVIDIA stock price page', memory='NVIDIA stock price', next_goal='extract current stock price'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://finance.google.com/quote/NVDA:NASDAQ",
+        "title": "NVIDIA Corporation - NASDAQ"
+      },
+      "llm_output": {
+        "current_state": "page_summary='NVIDIA stock price', evaluation_previous_goal='Success - scrolled to stock price', memory='current stock price', next_goal='done'",
+        "action": "[ActionModel(done=DoneAction(text='The current stock price of NVIDIA is $415.23'))]"
+      },
+      "success": true
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "task": "Find the research lab run by professor Abhinav Bhatele at UMD",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='New Tab', evaluation_previous_goal='None', memory='Find research lab run by professor Abhinav Bhatele at UMD', next_goal='Search for professor Abhinav Bhatele UMD'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.google.com'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com",
+        "title": "Google"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Google homepage', evaluation_previous_goal='Success - navigated to Google', memory='Find research lab run by professor Abhinav Bhatele at UMD', next_goal='Search for professor Abhinav Bhatele UMD'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='Abhinav Bhatele UMD'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com/search?q=Abhinav+Bhatele+UMD",
+        "title": "Abhinav Bhatele UMD - Google Search"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Search results for Abhinav Bhatele UMD', evaluation_previous_goal='Success - searched for professor', memory='Find research lab run by professor Abhinav Bhatele at UMD', next_goal='Find the research lab link'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=2, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.cs.umd.edu/people/faculty/abhinav",
+        "title": "Abhinav Bhatele | Department of Computer Science at University of Maryland"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Professor Abhinav Bhatele page', evaluation_previous_goal='Success - navigated to professor page', memory='Find research lab run by professor Abhinav Bhatele at UMD', next_goal='Find the research lab link'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.cs.umd.edu/research/parallel-computing-lab",
+        "title": "Parallel Computing Lab | Department of Computer Science at University of Maryland"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Parallel Computing Lab page', evaluation_previous_goal='Success - found research lab', memory='The research lab run by professor Abhinav Bhatele at UMD is the Parallel Computing Lab', next_goal='None'",
+        "action": "[ActionModel(done=DoneAction(text='The research lab run by professor Abhinav Bhatele at UMD is the Parallel Computing Lab'))]"
+      },
+      "success": true
+    }
+  ]
+}

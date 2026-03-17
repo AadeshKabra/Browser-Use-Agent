@@ -1,0 +1,49 @@
+{
+  "task": "Check the leaderboard rankings on LMSYS Chatbot Arena",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to LMSYS Chatbot Arena'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.lmsys.org/chatbot-arena'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.lmsys.org/chatbot-arena",
+        "title": "LMSYS Chatbot Arena"
+      },
+      "llm_output": {
+        "current_state": "page_summary='LMSYS Chatbot Arena homepage', evaluation_previous_goal='Success - navigated to LMSYS Chatbot Arena', memory='None', next_goal='click on leaderboard'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.lmsys.org/chatbot-arena/leaderboard",
+        "title": "LMSYS Chatbot Arena Leaderboard"
+      },
+      "llm_output": {
+        "current_state": "page_summary='leaderboard page', evaluation_previous_goal='Success - navigated to leaderboard', memory='None', next_goal='extract top ranking'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.lmsys.org/chatbot-arena/leaderboard",
+        "title": "LMSYS Chatbot Arena Leaderboard"
+      },
+      "llm_output": {
+        "current_state": "page_summary='leaderboard page with top rankings visible', evaluation_previous_goal='Success - scrolled to top rankings', memory='top ranking is LMSYS Chatbot', next_goal='extract answer'",
+        "action": "[ActionModel(done=DoneAction(text='The current top ranking on LMSYS Chatbot Arena is LMSYS Chatbot'))]"
+      },
+      "success": true
+    }
+  ]
+}

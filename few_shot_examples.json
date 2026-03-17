@@ -120,5 +120,851 @@
       "go_to_url: https://www.linkedin.com/company/modular-ai",
       "done: Extract company description and details"
     ]
+  },
+
+  {
+    "task": "Find the acceptance rate for ICML 2025",
+    "steps": [
+      "go_to_url: https://icml.cc",
+      "click_element: About or Statistics",
+      "done: Extract acceptance rate"
+    ]
+  },
+  {
+    "task": "Search for 'distributed training' papers on arXiv from the last week",
+    "steps": [
+      "go_to_url: https://arxiv.org/search/",
+      "input_text: distributed training in search box",
+      "click_element: Search",
+      "done: Extract titles and links of recent papers"
+    ]
+  },
+  {
+    "task": "Find the GitHub stars count for the vLLM repository",
+    "steps": [
+      "go_to_url: https://github.com/vllm-project/vllm",
+      "done: Extract star count from repository page"
+    ]
+  },
+  {
+    "task": "Look up the system requirements for CUDA Toolkit 12.6",
+    "steps": [
+      "go_to_url: https://developer.nvidia.com/cuda-downloads",
+      "click_element: Release Notes or Documentation",
+      "done: Extract system requirements and supported GPUs"
+    ]
+  },
+  {
+    "task": "Find the API pricing for OpenAI GPT-4o",
+    "steps": [
+      "go_to_url: https://openai.com/pricing",
+      "done: Extract GPT-4o input and output token prices"
+    ]
+  },
+  {
+    "task": "Check if the UMD campus gym is open on weekends",
+    "steps": [
+      "go_to_url: https://recwell.umd.edu",
+      "click_element: Hours or Facilities",
+      "done: Extract weekend hours for the gym"
+    ]
+  },
+  {
+    "task": "Find the top-rated Python IDE extensions on VS Code marketplace",
+    "steps": [
+      "go_to_url: https://marketplace.visualstudio.com",
+      "input_text: Python in search box",
+      "click_element: Search",
+      "done: Extract top results with ratings and install counts"
+    ]
+  },
+  {
+    "task": "Look up the tuition cost for out-of-state graduate students at UMD",
+    "steps": [
+      "go_to_url: https://billpay.umd.edu/tuition",
+      "click_element: Graduate or Out-of-State",
+      "done: Extract tuition and fees per semester"
+    ]
+  },
+  {
+    "task": "Find the next home football game for the Maryland Terrapins",
+    "steps": [
+      "go_to_url: https://umterps.com/sports/football/schedule",
+      "done: Extract the next home game date and opponent"
+    ]
+  },
+  {
+    "task": "Search for remote ML engineer internships on LinkedIn",
+    "steps": [
+      "go_to_url: https://www.linkedin.com/jobs/",
+      "input_text: ML engineer intern remote in search box",
+      "click_element: Search",
+      "done: Extract job titles, companies, and posting dates"
+    ]
+  },
+  {
+    "task": "Find the documentation for Python's asyncio library",
+    "steps": [
+      "go_to_url: https://docs.python.org/3/library/asyncio.html",
+      "done: Extract overview and main API sections"
+    ]
+  },
+  {
+    "task": "Check the current USD to INR exchange rate on Google",
+    "steps": [
+      "go_to_url: https://www.google.com",
+      "input_text: USD to INR in search box",
+      "click_element: Search",
+      "done: Extract current exchange rate"
+    ]
+  },
+  {
+    "task": "Find the latest release version of PyTorch",
+    "steps": [
+      "go_to_url: https://pytorch.org",
+      "done: Extract latest stable release version number"
+    ]
+  },
+  {
+    "task": "Look up the Hugging Face model card for Qwen2.5-7B-Instruct",
+    "steps": [
+      "go_to_url: https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+      "done: Extract model description, license, and download count"
+    ]
+  },
+  {
+    "task": "Find the nearest Chipotle to the University of Maryland campus",
+    "steps": [
+      "go_to_url: https://www.google.com/maps",
+      "input_text: Chipotle near University of Maryland",
+      "click_element: First Chipotle result",
+      "done: Extract address, hours, and distance"
+    ]
+  },
+  {
+    "task": "Search for the Unsloth GitHub repo and find LoRA fine-tuning examples",
+    "steps": [
+      "go_to_url: https://github.com/unslothai/unsloth",
+      "click_element: Wiki or examples folder",
+      "done: Extract list of fine-tuning example notebooks"
+    ]
+  },
+  {
+    "task": "Find the submission guidelines for ACL 2026",
+    "steps": [
+      "go_to_url: https://www.google.com",
+      "input_text: ACL 2026 submission guidelines in search box",
+      "click_element: Search",
+      "click_element: First relevant ACL result",
+      "done: Extract formatting requirements and page limits"
+    ]
+  },
+  {
+    "task": "Look up the package details for browser-use on PyPI",
+    "steps": [
+      "go_to_url: https://pypi.org/project/browser-use/",
+      "done: Extract version, description, and dependencies"
+    ]
+  },
+  {
+    "task": "Find the closing time of Trader Joe's in College Park",
+    "steps": [
+      "go_to_url: https://www.google.com/maps",
+      "input_text: Trader Joe's College Park MD",
+      "click_element: Trader Joe's result",
+      "done: Extract store hours"
+    ]
+  },
+  {
+    "task": "Check if there are any open issues labeled 'bug' in the LangChain GitHub repo",
+    "steps": [
+      "go_to_url: https://github.com/langchain-ai/langchain/issues",
+      "click_element: Labels filter",
+      "click_element: bug",
+      "done: Extract count and titles of open bug issues"
+    ]
+  },
+  {
+    "task": "Find the faculty advisor for the UMD AI club",
+    "steps": [
+      "go_to_url: https://www.google.com",
+      "input_text: UMD AI club faculty advisor site:umd.edu in search box",
+      "click_element: Search",
+      "click_element: First relevant result",
+      "done: Extract faculty advisor name"
+    ]
+  },
+  {
+    "task": "Look up the specs for the NVIDIA RTX 4050 Laptop GPU",
+    "steps": [
+      "go_to_url: https://www.nvidia.com/en-us/geforce/laptops/",
+      "click_element: RTX 4050 or Specifications",
+      "done: Extract CUDA cores, VRAM, and TDP"
+    ]
+  },
+  {
+    "task": "Find the latest blog post on the Anthropic website",
+    "steps": [
+      "go_to_url: https://www.anthropic.com/research",
+      "done: Extract title, date, and summary of the latest post"
+    ]
+  },
+  {
+    "task": "Search for 'RLHF' on Wikipedia and find the history section",
+    "steps": [
+      "go_to_url: https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback",
+      "click_element: History section link in table of contents",
+      "done: Extract history summary"
+    ]
+  },
+  {
+    "task": "Find the next UMD career fair date for engineering students",
+    "steps": [
+      "go_to_url: https://careers.umd.edu",
+      "click_element: Events or Career Fairs",
+      "done: Extract next engineering career fair date and location"
+    ]
+  },
+  {
+    "task": "Look up the download count for the transformers library on PyPI",
+    "steps": [
+      "go_to_url: https://pypi.org/project/transformers/",
+      "done: Extract weekly and total download statistics"
+    ]
+  },
+  {
+    "task": "Find available one-bedroom apartments near UMD under $1500 on Zillow",
+    "steps": [
+      "go_to_url: https://www.zillow.com",
+      "input_text: College Park MD in search box",
+      "click_element: Search",
+      "click_element: Rent filter",
+      "click_element: 1 bedroom filter",
+      "input_text: 1500 in max price field",
+      "click_element: Apply",
+      "done: Extract listings with price and address"
+    ]
+  },
+  {
+    "task": "Find what GPU instances are available on Google Colab Pro",
+    "steps": [
+      "go_to_url: https://colab.research.google.com/signup",
+      "done: Extract available GPU types and pricing tiers"
+    ]
+  },
+  {
+    "task": "Check the wait time at the UMD Health Center",
+    "steps": [
+      "go_to_url: https://health.umd.edu",
+      "click_element: Appointments or Wait Times",
+      "done: Extract current estimated wait time"
+    ]
+  },
+  {
+    "task": "Look up the review score for a restaurant called Moby Dick on Yelp",
+    "steps": [
+      "go_to_url: https://www.yelp.com",
+      "input_text: Moby Dick College Park MD in search box",
+      "click_element: Search",
+      "click_element: Moby Dick House of Kabob",
+      "done: Extract star rating and number of reviews"
+    ]
+  },
+  {
+    "task": "Find the enrollment deadline for spring semester at UMD",
+    "steps": [
+      "go_to_url: https://www.registrar.umd.edu/calendars/",
+      "click_element: Academic Calendar or Spring",
+      "done: Extract enrollment start and end dates"
+    ]
+  },
+  {
+    "task": "Search for 'KV cache optimization' on Semantic Scholar",
+    "steps": [
+      "go_to_url: https://www.semanticscholar.org",
+      "input_text: KV cache optimization in search box",
+      "click_element: Search",
+      "done: Extract top paper titles, authors, and citation counts"
+    ]
+  },
+  {
+    "task": "Find the cheapest one-way flight from DC to San Francisco next month",
+    "steps": [
+      "go_to_url: https://www.google.com/travel/flights",
+      "input_text: Washington DC in departure field",
+      "input_text: San Francisco in destination field",
+      "click_element: One way",
+      "click_element: Date picker and select next month dates",
+      "click_element: Search",
+      "done: Extract cheapest flight price and airline"
+    ]
+  },
+  {
+    "task": "Look up the open source license for the Ollama project",
+    "steps": [
+      "go_to_url: https://github.com/ollama/ollama",
+      "click_element: LICENSE file",
+      "done: Extract license type"
+    ]
+  },
+  {
+    "task": "Find the office hours for professor Jordan Boyd-Graber at UMD",
+    "steps": [
+      "go_to_url: https://www.cs.umd.edu/people/faculty",
+      "click_element: Jordan Boyd-Graber",
+      "done: Extract office hours and location"
+    ]
+  },
+  {
+    "task": "Check the leaderboard rankings on LMSYS Chatbot Arena",
+    "steps": [
+      "go_to_url: https://chat.lmsys.org/?leaderboard",
+      "done: Extract top 10 models and their ELO ratings"
+    ]
+  },
+  {
+    "task": "Find what conferences are accepting submissions this month on WikiCFP",
+    "steps": [
+      "go_to_url: http://www.wikicfp.com/cfp/",
+      "input_text: machine learning in search box",
+      "click_element: Search",
+      "done: Extract conference names and deadlines"
+    ]
+  },
+  {
+    "task": "Look up the documentation for Flask's SSE streaming support",
+    "steps": [
+      "go_to_url: https://flask.palletsprojects.com",
+      "input_text: streaming in search box",
+      "click_element: Search",
+      "click_element: Streaming or Response section",
+      "done: Extract streaming response usage and examples"
+    ]
+  },
+  {
+    "task": "Find the current stock price of NVIDIA",
+    "steps": [
+      "go_to_url: https://finance.yahoo.com",
+      "input_text: NVDA in search box",
+      "click_element: NVDA result",
+      "done: Extract current stock price and daily change"
+    ]
+  },
+  {
+    "task": "Search for vegetarian restaurants near College Park on Google Maps",
+    "steps": [
+      "go_to_url: https://www.google.com/maps",
+      "input_text: vegetarian restaurants College Park MD",
+      "done: Extract restaurant names, ratings, and addresses"
+    ]
+  },
+  {
+    "task": "Find the reading list for CMSC723 NLP course at UMD",
+    "steps": [
+      "go_to_url: https://www.google.com",
+      "input_text: CMSC723 NLP UMD syllabus in search box",
+      "click_element: Search",
+      "click_element: First course page result",
+      "done: Extract reading list or textbook information"
+    ]
+  },
+  {
+    "task": "Check if Python 3.12 is available via apt on Ubuntu 24.04",
+    "steps": [
+      "go_to_url: https://packages.ubuntu.com/noble/python3",
+      "done: Extract available Python version"
+    ]
+  },
+  {
+    "task": "Look up the latest Ollama release notes on GitHub",
+    "steps": [
+      "go_to_url: https://github.com/ollama/ollama/releases",
+      "click_element: Latest release",
+      "done: Extract version number and changelog highlights"
+    ]
+  },
+  {
+    "task": "Find the best-rated noise-canceling headphones under $200 on Best Buy",
+    "steps": [
+      "go_to_url: https://www.bestbuy.com",
+      "input_text: noise canceling headphones in search box",
+      "click_element: Search",
+      "click_element: Price filter under $200",
+      "click_element: Sort by Best Rated",
+      "done: Extract top product names, prices, and ratings"
+    ]
+  },
+  {
+    "task": "Find the publication venue and year for the DPR paper (Dense Passage Retrieval)",
+    "steps": [
+      "go_to_url: https://scholar.google.com",
+      "input_text: Dense Passage Retrieval for Open-Domain Question Answering",
+      "click_element: Search",
+      "done: Extract venue, year, and citation count"
+    ]
+  },
+  {
+    "task": "Check the status of a USPS package with a given tracking number",
+    "steps": [
+      "go_to_url: https://tools.usps.com/go/TrackConfirmAction_input",
+      "input_text: tracking number in tracking field",
+      "click_element: Track",
+      "done: Extract delivery status and estimated date"
+    ]
+  },
+  {
+    "task": "Find the Starbucks closest to UMD Iribe Center",
+    "steps": [
+      "go_to_url: https://www.google.com/maps",
+      "input_text: Starbucks near Iribe Center UMD",
+      "click_element: First Starbucks result",
+      "done: Extract address, distance, and hours"
+    ]
+  },
+  {
+    "task": "Search for LoRA adapter merging techniques on Hugging Face blog",
+    "steps": [
+      "go_to_url: https://huggingface.co/blog",
+      "input_text: LoRA in search box",
+      "click_element: Search",
+      "done: Extract relevant blog post titles and dates"
+    ]
+  },
+  {
+    "task": "Find how much VRAM is needed to run Llama 3 70B in 4-bit quantization",
+    "steps": [
+      "go_to_url: https://www.google.com",
+      "input_text: Llama 3 70B 4-bit quantization VRAM requirement in search box",
+      "click_element: Search",
+      "click_element: Most relevant result",
+      "done: Extract VRAM requirement"
+    ]
+  },
+  {
+    "task": "Check the event schedule on Eventbrite for tech meetups in the DC area",
+    "steps": [
+      "go_to_url: https://www.eventbrite.com",
+      "input_text: tech meetup in search box",
+      "input_text: Washington DC in location field",
+      "click_element: Search",
+      "done: Extract event names, dates, and locations"
+    ]
+  },
+  {
+    "task": "Find the opening hours for the UMD bookstore",
+    "steps": [
+      "go_to_url: https://www.google.com/maps",
+      "input_text: University of Maryland bookstore",
+      "click_element: UMD bookstore result",
+      "done: Extract store hours for today"
+    ]
+  },
+  {
+    "task": "Look up the benchmark scores for Qwen3-8B on the Open LLM Leaderboard",
+    "steps": [
+      "go_to_url: https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard",
+      "input_text: Qwen3-8B in search or filter box",
+      "done: Extract benchmark scores across tasks"
+    ]
+  },
+  {
+    "task": "Find the contributing guidelines for the browser-use GitHub repository",
+    "steps": [
+      "go_to_url: https://github.com/browser-use/browser-use",
+      "click_element: CONTRIBUTING.md or contributing guide link",
+      "done: Extract contribution steps and code style requirements"
+    ]
+  },
+  {
+    "task": "Search for internship postings at Anthropic on their careers page",
+    "steps": [
+      "go_to_url: https://www.anthropic.com/careers",
+      "click_element: Internships or filter by intern",
+      "done: Extract open intern positions and locations"
+    ]
+  },
+  {
+    "task": "Find the MCP server documentation on Anthropic's docs site",
+    "steps": [
+      "go_to_url: https://docs.anthropic.com",
+      "input_text: MCP server in search box",
+      "click_element: Search",
+      "click_element: Most relevant MCP documentation link",
+      "done: Extract setup instructions and supported transports"
+    ]
+  },
+  {
+    "task": "Check the review rating of the Iribe Center on Google Maps",
+    "steps": [
+      "go_to_url: https://www.google.com/maps",
+      "input_text: Iribe Center University of Maryland",
+      "click_element: Iribe Center result",
+      "done: Extract star rating and number of reviews"
+    ]
+  },
+  {
+    "task": "Find the total number of models available on Ollama's model library",
+    "steps": [
+      "go_to_url: https://ollama.com/library",
+      "done: Extract total model count and list popular models"
+    ]
+  },
+  {
+    "task": "Look up tomorrow's weather forecast for College Park MD",
+    "steps": [
+      "go_to_url: https://weather.com",
+      "input_text: College Park MD in search box",
+      "click_element: College Park result",
+      "click_element: Tomorrow or 10-day forecast",
+      "done: Extract tomorrow's high, low, and conditions"
+    ]
+  },
+  {
+    "task": "Find the differences between the free and pro tiers of Google Colab",
+    "steps": [
+      "go_to_url: https://colab.research.google.com/signup",
+      "done: Extract feature comparison between free and pro plans"
+    ]
+  },
+  {
+    "task": "Search for 'chunking strategies for RAG' on Medium",
+    "steps": [
+      "go_to_url: https://medium.com",
+      "input_text: chunking strategies for RAG in search box",
+      "click_element: Search",
+      "done: Extract top article titles and authors"
+    ]
+  },
+  {
+    "task": "Find the parking permit rates for graduate students at UMD",
+    "steps": [
+      "go_to_url: https://transportation.umd.edu/parking",
+      "click_element: Permits or Rates",
+      "done: Extract graduate student permit types and prices"
+    ]
+  },
+  {
+    "task": "Check whether the Paper with Code leaderboard has results for FinQA benchmark",
+    "steps": [
+      "go_to_url: https://paperswithcode.com",
+      "input_text: FinQA in search box",
+      "click_element: Search",
+      "click_element: FinQA benchmark result",
+      "done: Extract top model names and scores"
+    ]
+  },
+  {
+    "task": "Find the email address of the UMD CS graduate admissions office",
+    "steps": [
+      "go_to_url: https://www.cs.umd.edu/grad",
+      "click_element: Admissions or Contact",
+      "done: Extract email address and phone number"
+    ]
+  },
+  {
+    "task": "Look up how to set up a virtual environment in Python 3.12",
+    "steps": [
+      "go_to_url: https://docs.python.org/3/library/venv.html",
+      "done: Extract setup commands and usage instructions"
+    ]
+  },
+  {
+    "task": "Find the schedule for the Washington Metro Green Line",
+    "steps": [
+      "go_to_url: https://www.wmata.com/schedules/timetables/",
+      "click_element: Green Line",
+      "done: Extract weekday schedule and first/last train times"
+    ]
+  },
+  {
+    "task": "Search for 'multi-agent systems' recent papers on ACL Anthology",
+    "steps": [
+      "go_to_url: https://aclanthology.org",
+      "input_text: multi-agent systems in search box",
+      "click_element: Search",
+      "done: Extract recent paper titles, authors, and venues"
+    ]
+  },
+  {
+    "task": "Find the refund policy for Coursera course subscriptions",
+    "steps": [
+      "go_to_url: https://www.coursera.org",
+      "click_element: Help or Support",
+      "click_element: Refund policy",
+      "done: Extract refund window and conditions"
+    ]
+  },
+  {
+    "task": "Check if there are any NVIDIA GPU driver updates available for RTX 4050",
+    "steps": [
+      "go_to_url: https://www.nvidia.com/Download/index.aspx",
+      "click_element: GeForce product type",
+      "click_element: RTX 4050 Laptop GPU",
+      "click_element: Search",
+      "done: Extract latest driver version and release date"
+    ]
+  },
+  {
+    "task": "Find the fastest route from UMD to downtown DC on Google Maps",
+    "steps": [
+      "go_to_url: https://www.google.com/maps",
+      "click_element: Directions",
+      "input_text: University of Maryland in starting point",
+      "input_text: Downtown Washington DC in destination",
+      "done: Extract fastest route time and distance"
+    ]
+  },
+  {
+    "task": "Look up the maximum file upload size for GitHub repositories",
+    "steps": [
+      "go_to_url: https://docs.github.com/en/repositories/working-with-files/managing-large-files",
+      "done: Extract maximum file size and LFS limits"
+    ]
+  },
+  {
+    "task": "Find the number of open positions at Modular AI on their careers page",
+    "steps": [
+      "go_to_url: https://www.modular.com/careers",
+      "done: Extract total open positions and team categories"
+    ]
+  },
+  {
+    "task": "Search Craigslist DC for used NVIDIA GPUs for sale",
+    "steps": [
+      "go_to_url: https://washingtondc.craigslist.org",
+      "input_text: NVIDIA GPU in search box",
+      "click_element: Search",
+      "done: Extract listing titles, prices, and locations"
+    ]
+  },
+  {
+    "task": "Find the grading policy for a UMD CS course on the syllabus page",
+    "steps": [
+      "go_to_url: https://www.google.com",
+      "input_text: CMSC723 UMD grading policy syllabus in search box",
+      "click_element: Search",
+      "click_element: First relevant course syllabus result",
+      "done: Extract grading breakdown percentages"
+    ]
+  },
+  {
+    "task": "Check the real-time arrival times for College Park Metro station",
+    "steps": [
+      "go_to_url: https://www.wmata.com/rider-tools/NextBus/index.cfm",
+      "input_text: College Park in station search",
+      "click_element: College Park-U of Md station",
+      "done: Extract next arriving trains and times"
+    ]
+  },
+  {
+    "task": "Find a free GPU-enabled Kaggle notebook for text classification",
+    "steps": [
+      "go_to_url: https://www.kaggle.com/code",
+      "input_text: text classification GPU in search box",
+      "click_element: Search",
+      "click_element: Sort by most votes",
+      "done: Extract top notebook titles and authors"
+    ]
+  },
+  {
+    "task": "Look up the calorie count for a Chipotle chicken burrito bowl",
+    "steps": [
+      "go_to_url: https://www.chipotle.com/nutrition-calculator",
+      "click_element: Burrito Bowl",
+      "click_element: Chicken",
+      "done: Extract total calories and macronutrients"
+    ]
+  },
+  {
+    "task": "Find the h-index of a researcher named Hal Daume on Google Scholar",
+    "steps": [
+      "go_to_url: https://scholar.google.com",
+      "input_text: Hal Daume in search box",
+      "click_element: Search",
+      "click_element: Hal Daume III profile",
+      "done: Extract h-index and total citations"
+    ]
+  },
+  {
+    "task": "Check the available appointment times at the UMD writing center",
+    "steps": [
+      "go_to_url: https://www.english.umd.edu/academics/writingcenter",
+      "click_element: Make an Appointment or Schedule",
+      "done: Extract available dates and time slots"
+    ]
+  },
+  {
+    "task": "Find the instructions for setting up WSL2 with Ubuntu on Windows 11",
+    "steps": [
+      "go_to_url: https://learn.microsoft.com/en-us/windows/wsl/install",
+      "done: Extract installation steps and commands"
+    ]
+  },
+  {
+    "task": "Search for the best mechanical keyboards for programming on Reddit",
+    "steps": [
+      "go_to_url: https://www.reddit.com/r/MechanicalKeyboards/",
+      "input_text: best keyboard programming in search box",
+      "click_element: Search",
+      "click_element: Sort by Top",
+      "done: Extract recommended keyboards from top posts"
+    ]
+  },
+  {
+    "task": "Find the import/export formats supported by Jupyter notebooks",
+    "steps": [
+      "go_to_url: https://jupyter-notebook.readthedocs.io/en/stable/",
+      "input_text: export format in search box",
+      "click_element: Search",
+      "done: Extract supported export formats list"
+    ]
+  },
+  {
+    "task": "Look up the cost of a monthly Metro SmarTrip pass in DC",
+    "steps": [
+      "go_to_url: https://www.wmata.com/fares/",
+      "click_element: Passes or Monthly",
+      "done: Extract monthly pass price and included benefits"
+    ]
+  },
+  {
+    "task": "Find what datasets are available for financial question answering on Hugging Face",
+    "steps": [
+      "go_to_url: https://huggingface.co/datasets",
+      "input_text: financial question answering in search box",
+      "click_element: Search",
+      "done: Extract dataset names, sizes, and download counts"
+    ]
+  },
+  {
+    "task": "Check the homework deadline for a UMD course on ELMS",
+    "steps": [
+      "go_to_url: https://elms.umd.edu",
+      "click_element: Course name",
+      "click_element: Assignments",
+      "done: Extract upcoming assignment due dates"
+    ]
+  },
+  {
+    "task": "Find the batch processing documentation for the Anthropic API",
+    "steps": [
+      "go_to_url: https://docs.anthropic.com",
+      "input_text: batch processing in search box",
+      "click_element: Search",
+      "click_element: Batch API documentation",
+      "done: Extract batch endpoint usage and limits"
+    ]
+  },
+  {
+    "task": "Look up which Whole Foods stores near College Park have online delivery",
+    "steps": [
+      "go_to_url: https://www.wholefoodsmarket.com/stores",
+      "input_text: College Park MD in location search",
+      "click_element: Search",
+      "done: Extract nearby store addresses and delivery availability"
+    ]
+  },
+  {
+    "task": "Find the conference dates and location for EMNLP 2026",
+    "steps": [
+      "go_to_url: https://www.google.com",
+      "input_text: EMNLP 2026 dates location in search box",
+      "click_element: Search",
+      "click_element: Most relevant result",
+      "done: Extract conference dates, location, and important deadlines"
+    ]
+  },
+  {
+    "task": "Search for flash attention implementation details on GitHub",
+    "steps": [
+      "go_to_url: https://github.com/search",
+      "input_text: flash attention in search box",
+      "click_element: Search",
+      "click_element: Dao-AILab/flash-attention repository",
+      "done: Extract README summary and supported GPU architectures"
+    ]
+  },
+  {
+    "task": "Find the dining hall menu for today at UMD South Campus",
+    "steps": [
+      "go_to_url: https://dining.umd.edu/menus",
+      "click_element: South Campus Dining Hall",
+      "done: Extract today's lunch and dinner menu items"
+    ]
+  },
+  {
+    "task": "Look up the prerequisites for CMSC764 Advanced NLP at UMD",
+    "steps": [
+      "go_to_url: https://app.testudo.umd.edu/soc/",
+      "input_text: CMSC764 in search box",
+      "click_element: Search",
+      "click_element: CMSC764",
+      "done: Extract prerequisites and course description"
+    ]
+  },
+  {
+    "task": "Find the Spotify playlist 'Deep Focus' and check how many songs it has",
+    "steps": [
+      "go_to_url: https://open.spotify.com/search",
+      "input_text: Deep Focus in search box",
+      "click_element: Deep Focus playlist",
+      "done: Extract song count and total duration"
+    ]
+  },
+  {
+    "task": "Check if a book titled 'Designing Data-Intensive Applications' is available at UMD library",
+    "steps": [
+      "go_to_url: https://www.lib.umd.edu",
+      "input_text: Designing Data-Intensive Applications in search box",
+      "click_element: Search",
+      "done: Extract availability status and location in library"
+    ]
+  },
+  {
+    "task": "Find the rate limit details for the GitHub REST API",
+    "steps": [
+      "go_to_url: https://docs.github.com/en/rest/rate-limit",
+      "done: Extract rate limit per hour for authenticated and unauthenticated requests"
+    ]
+  },
+  {
+    "task": "Look up today's top posts on Hacker News",
+    "steps": [
+      "go_to_url: https://news.ycombinator.com",
+      "done: Extract top 10 post titles, points, and comment counts"
+    ]
+  },
+  {
+    "task": "Find how to install Nsight Systems on Ubuntu via command line",
+    "steps": [
+      "go_to_url: https://developer.nvidia.com/nsight-systems",
+      "click_element: Documentation or Download",
+      "done: Extract Linux installation commands"
+    ]
+  },
+  {
+    "task": "Search for 'retrieval augmented generation evaluation' papers on arXiv",
+    "steps": [
+      "go_to_url: https://arxiv.org/search/",
+      "input_text: retrieval augmented generation evaluation in search box",
+      "click_element: Search",
+      "done: Extract top paper titles, authors, and submission dates"
+    ]
+  },
+  {
+    "task": "Find the GRE score requirements for UMD CS graduate admissions",
+    "steps": [
+      "go_to_url: https://www.cs.umd.edu/grad/admission",
+      "done: Extract GRE requirement status and any minimum scores"
+    ]
+  },
+  {
+    "task": "Check the latest Python package versions for flask and flask-sse",
+    "steps": [
+      "go_to_url: https://pypi.org/project/Flask/",
+      "done: Extract Flask latest version",
+      "go_to_url: https://pypi.org/project/flask-sse/",
+      "done: Extract flask-sse latest version"
+    ]
   }
 ]

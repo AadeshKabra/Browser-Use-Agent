@@ -1,0 +1,60 @@
+{
+  "task": "Find the next home football game for the Maryland Terrapins",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='Maryland Terrapins football', next_goal='go to Maryland Terrapins website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://umterps.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://umterps.com/",
+        "title": "University of Maryland Athletics - Official Athletics Website"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Maryland Terrapins athletics website', evaluation_previous_goal='Success - navigated to website', memory='Maryland Terrapins football', next_goal='find football schedule'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=12, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://umterps.com/sports/football",
+        "title": "Football - University of Maryland Athletics"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Maryland Terrapins football page', evaluation_previous_goal='Success - navigated to football page', memory='Maryland Terrapins football schedule', next_goal='find next home game'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=25, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://umterps.com/sports/football/schedule",
+        "title": "2024 Football Schedule - University of Maryland Athletics"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Maryland Terrapins football schedule', evaluation_previous_goal='Success - navigated to schedule page', memory='next home game', next_goal='extract next home game info'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://umterps.com/sports/football/schedule",
+        "title": "2024 Football Schedule - University of Maryland Athletics"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Maryland Terrapins football schedule with next home game', evaluation_previous_goal='Success - scrolled to next home game', memory='September 14th vs Penn State', next_goal='done'",
+        "action": "[ActionModel(done=DoneAction(text='The next home football game for the Maryland Terrapins is on September 14th vs Penn State'))]"
+      },
+      "success": true
+    }
+  ]
+}

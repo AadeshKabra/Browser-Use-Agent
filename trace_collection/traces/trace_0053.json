@@ -1,0 +1,49 @@
+{
+  "task": "Find the latest blog post on the Anthropic website",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to Anthropic website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.anthropic.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.anthropic.com/",
+        "title": "Anthropic"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Anthropic homepage', evaluation_previous_goal='Success - navigated to Anthropic website', memory='None', next_goal='click on blog'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=5, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.anthropic.com/blog",
+        "title": "Anthropic Blog"
+      },
+      "llm_output": {
+        "current_state": "page_summary='list of blog posts', evaluation_previous_goal='Success - navigated to blog', memory='None', next_goal='find latest blog post'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=1, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.anthropic.com/blog/post-title",
+        "title": "Post Title - Anthropic"
+      },
+      "llm_output": {
+        "current_state": "page_summary='latest blog post', evaluation_previous_goal='Success - found latest blog post', memory='post title', next_goal='extract post title as answer'",
+        "action": "[ActionModel(done=DoneAction(text='The latest blog post on the Anthropic website is titled: Post Title'))]"
+      },
+      "success": true
+    }
+  ]
+}

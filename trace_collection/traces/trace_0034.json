@@ -1,0 +1,60 @@
+{
+  "task": "Look up the open source license for the Ollama project",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to github'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://github.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/",
+        "title": "GitHub: Where the world builds software"
+      },
+      "llm_output": {
+        "current_state": "page_summary='github homepage', evaluation_previous_goal='Success - navigated to github', memory='looking for ollama', next_goal='search for ollama'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='ollama'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/search?q=ollama",
+        "title": "Search \u00b7 ollama"
+      },
+      "llm_output": {
+        "current_state": "page_summary='search results for ollama', evaluation_previous_goal='Success - searched for ollama', memory='looking for ollama license', next_goal='click on ollama repository'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=1, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/ollama/ollama",
+        "title": "ollama/ollama: Ollama project"
+      },
+      "llm_output": {
+        "current_state": "page_summary='ollama repository', evaluation_previous_goal='Success - navigated to ollama repository', memory='looking for license', next_goal='click on license'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/ollama/ollama/blob/main/LICENSE",
+        "title": "ollama/ollama: LICENSE at main \u00b7 ollama/ollama"
+      },
+      "llm_output": {
+        "current_state": "page_summary='ollama license', evaluation_previous_goal='Success - navigated to license', memory='license text', next_goal='extract license info'",
+        "action": "[ActionModel(done=DoneAction(text='The Ollama project is licensed under the MIT License'))]"
+      },
+      "success": true
+    }
+  ]
+}

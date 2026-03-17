@@ -1,0 +1,60 @@
+{
+  "task": "Look up the schedule for UMD CS course CMSC828A",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='UMD CS course CMSC828A', next_goal='go to UMD course schedule website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.cs.umd.edu/courses'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.cs.umd.edu/courses",
+        "title": "Department of Computer Science - Courses"
+      },
+      "llm_output": {
+        "current_state": "page_summary='UMD CS courses page', evaluation_previous_goal='Success - navigated to UMD CS courses page', memory='UMD CS course CMSC828A', next_goal='search for CMSC828A'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.cs.umd.edu/courses/schedule",
+        "title": "Department of Computer Science - Course Schedule"
+      },
+      "llm_output": {
+        "current_state": "page_summary='UMD CS course schedule page', evaluation_previous_goal='Success - navigated to UMD CS course schedule page', memory='UMD CS course CMSC828A', next_goal='find CMSC828A schedule'",
+        "action": "[ActionModel(input_text=InputTextAction(index=5, text='CMSC828A'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.cs.umd.edu/courses/schedule?search=CMSC828A",
+        "title": "Department of Computer Science - Course Schedule - Search Results"
+      },
+      "llm_output": {
+        "current_state": "page_summary='UMD CS course schedule search results', evaluation_previous_goal='Success - searched for CMSC828A', memory='UMD CS course CMSC828A', next_goal='extract schedule info'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=15, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.cs.umd.edu/courses/schedule/CMSC828A",
+        "title": "Department of Computer Science - CMSC828A - Schedule"
+      },
+      "llm_output": {
+        "current_state": "page_summary='UMD CS course CMSC828A schedule', evaluation_previous_goal='Success - navigated to CMSC828A schedule page', memory='UMD CS course CMSC828A', next_goal='done'",
+        "action": "[ActionModel(done=DoneAction(text='CMSC828A meets on Tuesdays and Thursdays from 2:00-3:15 PM in CSI 3117'))]"
+      },
+      "success": true
+    }
+  ]
+}

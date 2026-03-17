@@ -1,0 +1,60 @@
+{
+  "task": "Look up the calorie count for a Chipotle chicken burrito bowl",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to Chipotle website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.chipotle.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.chipotle.com/",
+        "title": "Chipotle Mexican Grill"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Chipotle homepage', evaluation_previous_goal='Success - navigated to Chipotle website', memory='None', next_goal='click on nutrition'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=12, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.chipotle.com/nutrition",
+        "title": "Nutrition | Chipotle Mexican Grill"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Chipotle nutrition page', evaluation_previous_goal='Success - navigated to nutrition page', memory='None', next_goal='click on burrito bowls'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=25, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.chipotle.com/nutrition/burrito-bowls",
+        "title": "Burrito Bowls Nutrition | Chipotle Mexican Grill"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Chipotle burrito bowls nutrition page', evaluation_previous_goal='Success - navigated to burrito bowls nutrition page', memory='chicken burrito bowl', next_goal='find calorie count for chicken burrito bowl'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=42, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.chipotle.com/nutrition/burrito-bowls/chicken",
+        "title": "Chicken Burrito Bowl Nutrition | Chipotle Mexican Grill"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Chipotle chicken burrito bowl nutrition page', evaluation_previous_goal='Success - navigated to chicken burrito bowl nutrition page', memory='calorie count=370', next_goal='done'",
+        "action": "[ActionModel(done=DoneAction(text='A Chipotle chicken burrito bowl has 370 calories'))]"
+      },
+      "success": true
+    }
+  ]
+}

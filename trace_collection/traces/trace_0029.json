@@ -1,0 +1,49 @@
+{
+  "task": "Find the latest release version of PyTorch",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='New Tab', evaluation_previous_goal='None', memory='None', next_goal='Go to PyTorch website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://pytorch.org/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://pytorch.org/",
+        "title": "PyTorch"
+      },
+      "llm_output": {
+        "current_state": "page_summary='PyTorch homepage', evaluation_previous_goal='Success - navigated to PyTorch website', memory='None', next_goal='Click on Get Started'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://pytorch.org/get-started/",
+        "title": "Get Started | PyTorch"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Get Started page', evaluation_previous_goal='Success - clicked on Get Started', memory='None', next_goal='Find the latest release version'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=20, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://pytorch.org/get-started/previous-versions/",
+        "title": "Previous Versions | PyTorch"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Previous Versions page', evaluation_previous_goal='Success - navigated to previous versions', memory='latest version is 2.0.0', next_goal='Extract the latest release version'",
+        "action": "[ActionModel(done=DoneAction(text='The latest release version of PyTorch is 2.0.0'))]"
+      },
+      "success": true
+    }
+  ]
+}

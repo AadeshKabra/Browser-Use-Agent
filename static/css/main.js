@@ -30,21 +30,15 @@ async function sendMessage() {
     const evtSource = new EventSource('/memory/stream')
     evtSource.onmessage = (event) => {
         const step = JSON.parse(event.data);
-        memoryLog.innerHTML = `
-            <div class="memory-entry">
-                <strong>Step ${step.step}: </strong>
-                <div class="memory-thought">${step.memory || 'No memory'}</div>
-            </div>
-        `;
-        // const entry = document.createElement('div');
-        // entry.className = 'memory-entry';
-        // entry.innerHTML = `
-        //     <strong>Step ${step.step}:</strong>
-        //     <div class="memory-thought">${step.memory || 'No memory'}</div>
+        const entry = document.createElement('div');
+        entry.className = 'memory-entry';
+        entry.innerHTML = `
+            <strong>Step ${step.step}:</strong>
+            <div class="memory-thought">${step.memory || 'No memory'}</div>
             
-        // `;
-        // memoryLog.appendChild(entry);
-        // memoryLog.scrollTop = memoryLog.scrollHeight;
+        `;
+        memoryLog.appendChild(entry);
+        memoryLog.scrollTop = memoryLog.scrollHeight;
     }
 
     try {

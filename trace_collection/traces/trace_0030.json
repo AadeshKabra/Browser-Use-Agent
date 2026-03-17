@@ -1,0 +1,60 @@
+{
+  "task": "Look up the Hugging Face model card for Qwen2.5-7B-Instruct",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='New Tab', evaluation_previous_goal='None', memory='None', next_goal='Go to Hugging Face'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://huggingface.co/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://huggingface.co/",
+        "title": "Hugging Face \u2013 The AI model hub"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Hugging Face homepage', evaluation_previous_goal='Success - navigated to Hugging Face', memory='None', next_goal='Search for Qwen2.5-7B-Instruct'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='Qwen2.5-7B-Instruct'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://huggingface.co/search?query=Qwen2.5-7B-Instruct",
+        "title": "Search results for 'Qwen2.5-7B-Instruct' - Hugging Face"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Search results for Qwen2.5-7B-Instruct', evaluation_previous_goal='Success - searched for Qwen2.5-7B-Instruct', memory='Qwen2.5-7B-Instruct', next_goal='Click on the model card'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=1, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://huggingface.co/qwen-ai/qwen2.5-7b-instruct",
+        "title": "qwen-ai/qwen2.5-7b-instruct \u2022 Hugging Face"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Qwen2.5-7B-Instruct model card', evaluation_previous_goal='Success - navigated to Qwen2.5-7B-Instruct model card', memory='Qwen2.5-7B-Instruct', next_goal='Extract info from model card'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://huggingface.co/qwen-ai/qwen2.5-7b-instruct",
+        "title": "qwen-ai/qwen2.5-7b-instruct \u2022 Hugging Face"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Qwen2.5-7B-Instruct model card', evaluation_previous_goal='Success - scrolled down', memory='Qwen2.5-7B-Instruct', next_goal='Done'",
+        "action": "[ActionModel(done=DoneAction(text='The Qwen2.5-7B-Instruct model is a 7 billion parameter instruct-tuned model.'))]"
+      },
+      "success": true
+    }
+  ]
+}

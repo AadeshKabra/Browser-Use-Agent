@@ -1,0 +1,49 @@
+{
+  "task": "Check if the UMD campus gym is open on weekends",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='New Tab', evaluation_previous_goal='None', memory='Check UMD campus gym weekend hours', next_goal='Go to UMD recreation website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.recwell.umd.edu/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.recwell.umd.edu/",
+        "title": "University Recreation & Wellness"
+      },
+      "llm_output": {
+        "current_state": "page_summary='UMD Recreation homepage', evaluation_previous_goal='Success - navigated to UMD recreation website', memory='Check UMD campus gym weekend hours', next_goal='Find hours of operation'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=12, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.recwell.umd.edu/facilities/hours-of-operation",
+        "title": "Hours of Operation | University Recreation & Wellness"
+      },
+      "llm_output": {
+        "current_state": "page_summary='UMD Recreation hours of operation', evaluation_previous_goal='Success - found hours page', memory='Check UMD campus gym weekend hours', next_goal='Extract weekend hours'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.recwell.umd.edu/facilities/hours-of-operation",
+        "title": "Hours of Operation | University Recreation & Wellness"
+      },
+      "llm_output": {
+        "current_state": "page_summary='UMD Recreation hours table', evaluation_previous_goal='Success - scrolled to hours table', memory='Check UMD campus gym weekend hours', next_goal='Done - extract answer'",
+        "action": "[ActionModel(done=DoneAction(text='The UMD campus gym is open on weekends from 10am to 6pm.'))]"
+      },
+      "success": true
+    }
+  ]
+}

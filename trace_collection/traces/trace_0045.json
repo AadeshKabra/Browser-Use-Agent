@@ -1,0 +1,49 @@
+{
+  "task": "Find the nearest Chipotle to the University of Maryland campus",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='University of Maryland campus', next_goal='find Chipotle near University of Maryland'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.google.com'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com",
+        "title": "Google"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Google homepage', evaluation_previous_goal='Success - navigated to Google', memory='University of Maryland campus', next_goal='search for Chipotle near University of Maryland'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='Chipotle near University of Maryland'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com/search?q=Chipotle+near+University+of+Maryland",
+        "title": "Chipotle near University of Maryland - Google Search"
+      },
+      "llm_output": {
+        "current_state": "page_summary='search results for Chipotle near University of Maryland', evaluation_previous_goal='Success - searched for Chipotle', memory='University of Maryland campus', next_goal='find the nearest Chipotle'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=3, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.chipotle.com/stores/us/md/college-park/10505-baltimore-ave",
+        "title": "Chipotle Mexican Grill - 10505 Baltimore Ave in College Park, MD"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Chipotle location page', evaluation_previous_goal='Success - found a Chipotle location', memory='University of Maryland campus', next_goal='get the final answer'",
+        "action": "[ActionModel(done=DoneAction(text='The nearest Chipotle to the University of Maryland campus is located at 10505 Baltimore Ave, College Park, MD'))]"
+      },
+      "success": true
+    }
+  ]
+}

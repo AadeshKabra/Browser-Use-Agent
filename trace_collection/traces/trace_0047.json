@@ -1,0 +1,71 @@
+{
+  "task": "Find the cheapest one-way flight from DC to San Francisco next month",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='DC to San Francisco next month', next_goal='go to Google Flights'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.google.com/flights'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com/flights",
+        "title": "Google Flights"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Google Flights homepage', evaluation_previous_goal='Success', memory='DC to San Francisco next month', next_goal='enter flight details'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='Washington D.C.'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com/flights",
+        "title": "Google Flights"
+      },
+      "llm_output": {
+        "current_state": "page_summary='departure city entered', evaluation_previous_goal='Success', memory='DC to San Francisco next month', next_goal='enter destination'",
+        "action": "[ActionModel(input_text=InputTextAction(index=2, text='San Francisco'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com/flights",
+        "title": "Google Flights"
+      },
+      "llm_output": {
+        "current_state": "page_summary='destination entered', evaluation_previous_goal='Success', memory='DC to San Francisco next month', next_goal='select one-way and next month'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com/flights",
+        "title": "Google Flights"
+      },
+      "llm_output": {
+        "current_state": "page_summary='one-way and next month selected', evaluation_previous_goal='Success', memory='DC to San Francisco next month', next_goal='find cheapest flight'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=50, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com/flights",
+        "title": "Google Flights"
+      },
+      "llm_output": {
+        "current_state": "page_summary='cheapest flight found', evaluation_previous_goal='Success', memory='DC to San Francisco next month', next_goal='None'",
+        "action": "[ActionModel(done=DoneAction(text='The cheapest one-way flight from DC to San Francisco next month is $250 on United Airlines'))]"
+      },
+      "success": true
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "task": "Find the refund policy for Coursera course subscriptions",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to Coursera website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.coursera.org/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.coursera.org/",
+        "title": "Coursera | Online Courses & Degrees from Top Universities"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Coursera homepage', evaluation_previous_goal='Success - navigated to Coursera', memory='None', next_goal='find refund policy page'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.coursera.org/about/terms",
+        "title": "Terms of Service | Coursera"
+      },
+      "llm_output": {
+        "current_state": "page_summary='terms of service page', evaluation_previous_goal='Failed - not refund policy', memory='refund policy not found in terms', next_goal='search for refund policy'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='refund policy'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.coursera.org/search?query=refund%20policy",
+        "title": "Search Results | Coursera"
+      },
+      "llm_output": {
+        "current_state": "page_summary='search results for refund policy', evaluation_previous_goal='Success - searched for refund policy', memory='refund policy link not found', next_goal='check help center'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=5, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://support.coursera.org/s/article/208279868-Refund-Policy",
+        "title": "Refund Policy | Coursera Support"
+      },
+      "llm_output": {
+        "current_state": "page_summary='refund policy page', evaluation_previous_goal='Success - found refund policy', memory='refund policy details', next_goal='extract refund policy details'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://support.coursera.org/s/article/208279868-Refund-Policy",
+        "title": "Refund Policy | Coursera Support"
+      },
+      "llm_output": {
+        "current_state": "page_summary='refund policy details', evaluation_previous_goal='Success - scrolled to refund policy', memory='refund policy details', next_goal='None'",
+        "action": "[ActionModel(done=DoneAction(text='Coursera offers a 14-day money-back guarantee for most courses and Specializations.'))]"
+      },
+      "success": true
+    }
+  ]
+}

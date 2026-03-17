@@ -1,0 +1,49 @@
+{
+  "task": "Check the current USD to INR exchange rate on Google",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to Google'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.google.com'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com",
+        "title": "Google"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Google homepage', evaluation_previous_goal='Success - navigated to Google', memory='None', next_goal='search for USD to INR exchange rate'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='USD to INR'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com/search?q=USD+to+INR",
+        "title": "USD to INR - Google Search"
+      },
+      "llm_output": {
+        "current_state": "page_summary='search results for USD to INR', evaluation_previous_goal='Success - searched for USD to INR', memory='exchange rate', next_goal='extract the current exchange rate'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=1, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com/search?q=USD+to+INR",
+        "title": "USD to INR - Google Search"
+      },
+      "llm_output": {
+        "current_state": "page_summary='current exchange rate displayed', evaluation_previous_goal='Success - clicked on exchange rate', memory='1 USD = 82.55 INR', next_goal='done'",
+        "action": "[ActionModel(done=DoneAction(text='1 USD is equal to 82.55 INR'))]"
+      },
+      "success": true
+    }
+  ]
+}

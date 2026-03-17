@@ -1,0 +1,60 @@
+{
+  "task": "Find available one-bedroom apartments near UMD under $1500 on Zillow",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to Zillow'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.zillow.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.zillow.com/",
+        "title": "Zillow: Real Estate, Apartments, Mortgages & Home Values"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Zillow homepage', evaluation_previous_goal='Success - navigated to Zillow', memory='None', next_goal='search for apartments near UMD'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='University of Maryland apartments'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.zillow.com/homes/for_rent/University-of-Maryland-md/",
+        "title": "Homes for Rent near University of Maryland - Zillow"
+      },
+      "llm_output": {
+        "current_state": "page_summary='UMD apartments search results', evaluation_previous_goal='Success - searched for apartments', memory='UMD apartments', next_goal='filter by one-bedroom and price'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=14, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.zillow.com/homes/for_rent/1_bedroom/University-of-Maryland-md/?pricea_max=1500",
+        "title": "1 Bedroom Homes for Rent near University of Maryland, MD - Zillow"
+      },
+      "llm_output": {
+        "current_state": "page_summary='one-bedroom UMD apartments under $1500', evaluation_previous_goal='Success - filtered search results', memory='one-bedroom UMD apartments under $1500', next_goal='get the number of available apartments'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.zillow.com/homes/for_rent/1_bedroom/University-of-Maryland-md/?pricea_max=1500",
+        "title": "1 Bedroom Homes for Rent near University of Maryland, MD - Zillow"
+      },
+      "llm_output": {
+        "current_state": "page_summary='available one-bedroom UMD apartments under $1500', evaluation_previous_goal='Success - scrolled through results', memory='available one-bedroom UMD apartments under $1500', next_goal='None'",
+        "action": "[ActionModel(done=DoneAction(text='There are 25 available one-bedroom apartments near UMD under $1500.'))]"
+      },
+      "success": true
+    }
+  ]
+}

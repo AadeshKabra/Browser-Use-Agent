@@ -1,0 +1,803 @@
+[
+  {
+    "task": "Find the research lab run by professor Abhinav Bhatele at UMD",
+    "steps": [
+      "go_to_url: https://www.cs.umd.edu/people/faculty",
+      "click_element: Abhinav Bhatele",
+      "done: Parallel Software and Systems Group"
+    ]
+  },
+  {
+    "task": "Find the office location of professor Hal Daume at UMD CS",
+    "steps": [
+      "go_to_url: https://www.cs.umd.edu/people/faculty",
+      "click_element: Hal Daume",
+      "done: Extract office number from profile"
+    ]
+  },
+  {
+    "task": "What are the admission requirements for UMD CS PhD program",
+    "steps": [
+      "go_to_url: https://www.cs.umd.edu/grad/catalog",
+      "click_element: Admission Requirements or PhD Program",
+      "done: Extract admission requirements"
+    ]
+  },
+  {
+    "task": "Find the hours of operation for the McKeldin Library at UMD",
+    "steps": [
+      "go_to_url: https://www.lib.umd.edu/visit/hours",
+      "done: Extract McKeldin Library hours"
+    ]
+  },
+  {
+    "task": "Look up the schedule for UMD CS course CMSC828A",
+    "steps": [
+      "go_to_url: https://app.testudo.umd.edu/soc/",
+      "input_text: CMSC in search box",
+      "click_element: Search",
+      "click_element: CMSC828A",
+      "done: Extract course schedule and instructor"
+    ]
+  },
+  {
+    "task": "Check if the UMD campus gym is open on weekends",
+    "steps": [
+      "go_to_url: https://recwell.umd.edu",
+      "click_element: Hours or Facilities",
+      "done: Extract weekend hours for the gym"
+    ]
+  },
+  {
+    "task": "Look up the tuition cost for out-of-state graduate students at UMD",
+    "steps": [
+      "go_to_url: https://billpay.umd.edu/tuition",
+      "click_element: Graduate or Out-of-State",
+      "done: Extract tuition and fees per semester"
+    ]
+  },
+  {
+    "task": "Find the next home football game for the Maryland Terrapins",
+    "steps": [
+      "go_to_url: https://umterps.com/sports/football/schedule",
+      "done: Extract the next home game date and opponent"
+    ]
+  },
+  {
+    "task": "Look up the review score for a restaurant called Moby Dick on Yelp",
+    "steps": [
+      "go_to_url: https://www.yelp.com",
+      "input_text: Moby Dick College Park MD in search box",
+      "click_element: Search",
+      "click_element: Moby Dick House of Kabob",
+      "done: Extract star rating and number of reviews"
+    ]
+  },
+  {
+    "task": "Look up how to set up a virtual environment in Python 3.12",
+    "steps": [
+      "go_to_url: https://docs.python.org/3/library/venv.html",
+      "done: Extract setup commands and usage instructions"
+    ]
+  },
+  {
+    "task": "Find the top trending repositories on GitHub today",
+    "steps": [
+      "go_to_url: https://github.com/trending",
+      "done: Extract list of trending repositories"
+    ]
+  },
+  {
+    "task": "Find the GitHub stars count for the vLLM repository",
+    "steps": [
+      "go_to_url: https://github.com/vllm-project/vllm",
+      "done: Extract star count from repository page"
+    ]
+  },
+  {
+    "task": "Find the API pricing for OpenAI GPT-4o",
+    "steps": [
+      "go_to_url: https://openai.com/pricing",
+      "done: Extract GPT-4o input and output token prices"
+    ]
+  },
+  {
+    "task": "Find the top-rated Python IDE extensions on VS Code marketplace",
+    "steps": [
+      "go_to_url: https://marketplace.visualstudio.com",
+      "input_text: Python in search box",
+      "click_element: Search",
+      "done: Extract top results with ratings and install counts"
+    ]
+  },
+  {
+    "task": "Find the latest release version of PyTorch",
+    "steps": [
+      "go_to_url: https://pytorch.org",
+      "done: Extract latest stable release version number"
+    ]
+  },
+  {
+    "task": "Look up the Hugging Face model card for Qwen2.5-7B-Instruct",
+    "steps": [
+      "go_to_url: https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+      "done: Extract model description, license, and download count"
+    ]
+  },
+  {
+    "task": "Look up the package details for browser-use on PyPI",
+    "steps": [
+      "go_to_url: https://pypi.org/project/browser-use/",
+      "done: Extract version, description, and dependencies"
+    ]
+  },
+  {
+    "task": "Check if there are any open issues labeled 'bug' in the LangChain GitHub repo",
+    "steps": [
+      "go_to_url: https://github.com/langchain-ai/langchain/issues",
+      "click_element: Labels filter",
+      "click_element: bug",
+      "done: Extract count and titles of open bug issues"
+    ]
+  },
+  {
+    "task": "Check if Python 3.12 is available via apt on Ubuntu 24.04",
+    "steps": [
+      "go_to_url: https://packages.ubuntu.com/noble/python3",
+      "done: Extract available Python version"
+    ]
+  },
+  {
+    "task": "Look up the open source license for the Ollama project",
+    "steps": [
+      "go_to_url: https://github.com/ollama/ollama",
+      "click_element: LICENSE file",
+      "done: Extract license type"
+    ]
+  },
+  {
+    "task": "Find the latest research papers published by Stanford NLP group",
+    "steps": [
+      "go_to_url: https://nlp.stanford.edu/pubs/",
+      "done: Extract list of recent publications"
+    ]
+  },
+  {
+    "task": "Find how many citations a paper titled 'Attention is All You Need' has on Google Scholar",
+    "steps": [
+      "go_to_url: https://scholar.google.com",
+      "input_text: Attention is All You Need",
+      "click_element: Search",
+      "done: Extract citation count from result"
+    ]
+  },
+  {
+    "task": "What is the deadline for NeurIPS 2025 paper submission",
+    "steps": [
+      "go_to_url: https://neurips.cc",
+      "click_element: Dates or Call for Papers",
+      "done: Extract submission deadline"
+    ]
+  },
+  {
+    "task": "Search for 'distributed training' papers on arXiv from the last week",
+    "steps": [
+      "go_to_url: https://arxiv.org/search/",
+      "input_text: distributed training in search box",
+      "click_element: Search",
+      "done: Extract titles and links of recent papers"
+    ]
+  },
+  {
+    "task": "Find the submission guidelines for ACL 2026",
+    "steps": [
+      "go_to_url: https://www.google.com",
+      "input_text: ACL 2026 submission guidelines in search box",
+      "click_element: Search",
+      "click_element: First relevant ACL result",
+      "done: Extract formatting requirements and page limits"
+    ]
+  },
+  {
+    "task": "Search for 'KV cache optimization' on Semantic Scholar",
+    "steps": [
+      "go_to_url: https://www.semanticscholar.org",
+      "input_text: KV cache optimization in search box",
+      "click_element: Search",
+      "done: Extract top paper titles, authors, and citation counts"
+    ]
+  },
+  {
+    "task": "Find the publication venue and year for the DPR paper (Dense Passage Retrieval)",
+    "steps": [
+      "go_to_url: https://scholar.google.com",
+      "input_text: Dense Passage Retrieval for Open-Domain Question Answering",
+      "click_element: Search",
+      "done: Extract venue, year, and citation count"
+    ]
+  },
+  {
+    "task": "Find the refund policy for Coursera course subscriptions",
+    "steps": [
+      "go_to_url: https://www.coursera.org",
+      "click_element: Help or Support",
+      "click_element: Refund policy",
+      "done: Extract refund window and conditions"
+    ]
+  },
+  {
+    "task": "What is the price of iPhone 16 Pro on Apple's website",
+    "steps": [
+      "go_to_url: https://www.apple.com/shop/buy-iphone",
+      "click_element: iPhone 16 Pro",
+      "done: Extract starting price"
+    ]
+  },
+  {
+    "task": "Find the return policy on Amazon",
+    "steps": [
+      "go_to_url: https://www.amazon.com/gp/help/customer/display.html",
+      "click_element: Returns and Refunds",
+      "done: Extract return policy details"
+    ]
+  },
+  {
+    "task": "Find the nearest Chipotle to the University of Maryland campus",
+    "steps": [
+      "go_to_url: https://www.google.com/maps",
+      "input_text: Chipotle near University of Maryland",
+      "click_element: First Chipotle result",
+      "done: Extract address, hours, and distance"
+    ]
+  },
+  {
+    "task": "Look up the latest Ollama release notes on GitHub",
+    "steps": [
+      "go_to_url: https://github.com/ollama/ollama/releases",
+      "click_element: Latest release",
+      "done: Extract version number and changelog highlights"
+    ]
+  },
+  {
+    "task": "Find the closing time of Trader Joe's in College Park",
+    "steps": [
+      "go_to_url: https://www.google.com/maps",
+      "input_text: Trader Joe's College Park MD",
+      "click_element: Trader Joe's result",
+      "done: Extract store hours"
+    ]
+  },
+  {
+    "task": "Find the cheapest one-way flight from DC to San Francisco next month",
+    "steps": [
+      "go_to_url: https://www.google.com/travel/flights",
+      "input_text: Washington DC in departure field",
+      "input_text: San Francisco in destination field",
+      "click_element: One way",
+      "click_element: Date picker and select next month dates",
+      "click_element: Search",
+      "done: Extract cheapest flight price and airline"
+    ]
+  },
+  {
+    "task": "Look up the maximum file upload size for GitHub repositories",
+    "steps": [
+      "go_to_url: https://docs.github.com/en/repositories/working-with-files/managing-large-files",
+      "done: Extract maximum file size and LFS limits"
+    ]
+  },
+  {
+    "task": "Check the current weather in College Park, Maryland",
+    "steps": [
+      "go_to_url: https://weather.com",
+      "input_text: College Park, MD in search box",
+      "click_element: Search or College Park result",
+      "done: Extract current temperature and conditions"
+    ]
+  },
+  {
+    "task": "Find the schedule for the Washington Metro Green Line",
+    "steps": [
+      "go_to_url: https://www.wmata.com/schedules/timetables/",
+      "click_element: Green Line",
+      "done: Extract weekday schedule and first/last train times"
+    ]
+  },
+  {
+    "task": "Find the LinkedIn profile of a company called Modular AI",
+    "steps": [
+      "go_to_url: https://www.linkedin.com/company/modular-ai",
+      "done: Extract company description and details"
+    ]
+  },
+  {
+    "task": "Find the documentation for Python's asyncio library",
+    "steps": [
+      "go_to_url: https://docs.python.org/3/library/asyncio.html",
+      "done: Extract overview and main API sections"
+    ]
+  },
+  {
+    "task": "Find the latest blog post on the Anthropic website",
+    "steps": [
+      "go_to_url: https://www.anthropic.com/research",
+      "done: Extract title, date, and summary of the latest post"
+    ]
+  },
+  {
+    "task": "Find the grading policy for a UMD CS course on the syllabus page",
+    "steps": [
+      "go_to_url: https://www.google.com",
+      "input_text: CMSC723 UMD grading policy syllabus in search box",
+      "click_element: Search",
+      "click_element: First relevant course syllabus result",
+      "done: Extract grading breakdown percentages"
+    ]
+  },
+  {
+    "task": "Check the leaderboard rankings on LMSYS Chatbot Arena",
+    "steps": [
+      "go_to_url: https://chat.lmsys.org/?leaderboard",
+      "done: Extract top 10 models and their ELO ratings"
+    ]
+  },
+  {
+    "task": "Search for remote ML engineer internships on LinkedIn",
+    "steps": [
+      "go_to_url: https://www.linkedin.com/jobs/",
+      "input_text: ML engineer intern remote in search box",
+      "click_element: Search",
+      "done: Extract job titles, companies, and posting dates"
+    ]
+  },
+  {
+    "task": "Check the current USD to INR exchange rate on Google",
+    "steps": [
+      "go_to_url: https://www.google.com",
+      "input_text: USD to INR in search box",
+      "click_element: Search",
+      "done: Extract current exchange rate"
+    ]
+  },
+  {
+    "task": "Search for 'RLHF' on Wikipedia and find the history section",
+    "steps": [
+      "go_to_url: https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback",
+      "click_element: History section link in table of contents",
+      "done: Extract history summary"
+    ]
+  },
+  {
+    "task": "Find available one-bedroom apartments near UMD under $1500 on Zillow",
+    "steps": [
+      "go_to_url: https://www.zillow.com",
+      "input_text: College Park MD in search box",
+      "click_element: Search",
+      "click_element: Rent filter",
+      "click_element: 1 bedroom filter",
+      "input_text: 1500 in max price field",
+      "click_element: Apply",
+      "done: Extract listings with price and address"
+    ]
+  },
+  {
+    "task": "Find the current stock price of NVIDIA",
+    "steps": [
+      "go_to_url: https://finance.yahoo.com",
+      "input_text: NVDA in search box",
+      "click_element: NVDA result",
+      "done: Extract current stock price and daily change"
+    ]
+  },
+  {
+    "task": "Find how much VRAM is needed to run Llama 3 70B in 4-bit quantization",
+    "steps": [
+      "go_to_url: https://www.google.com",
+      "input_text: Llama 3 70B 4-bit quantization VRAM requirement in search box",
+      "click_element: Search",
+      "click_element: Most relevant result",
+      "done: Extract VRAM requirement"
+    ]
+  },
+  {
+    "task": "Check the status of a USPS package with a given tracking number",
+    "steps": [
+      "go_to_url: https://tools.usps.com/go/TrackConfirmAction_input",
+      "input_text: tracking number in tracking field",
+      "click_element: Track",
+      "done: Extract delivery status and estimated date"
+    ]
+  },
+  {
+    "task": "Look up the calorie count for a Chipotle chicken burrito bowl",
+    "steps": [
+      "go_to_url: https://www.chipotle.com/nutrition-calculator",
+      "click_element: Burrito Bowl",
+      "click_element: Chicken",
+      "done: Extract total calories and macronutrients"
+    ]
+  },
+  {
+    "task": "Find the population and area of Germany on Wikipedia",
+    "steps": [
+      "go_to_url: https://en.wikipedia.org/wiki/Germany",
+      "done: Extract population and area from infobox"
+    ]
+  },
+  {
+    "task": "Look up the history of the Internet on Wikipedia",
+    "steps": [
+      "go_to_url: https://en.wikipedia.org/wiki/History_of_the_Internet",
+      "done: Extract key milestones and dates"
+    ]
+  },
+  {
+    "task": "Find the list of Nobel Prize winners in Physics for the last 5 years on Wikipedia",
+    "steps": [
+      "go_to_url: https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Physics",
+      "scroll_down: to recent years",
+      "done: Extract winners from 2021-2025"
+    ]
+  },
+  {
+    "task": "What programming languages influenced Rust according to Wikipedia",
+    "steps": [
+      "go_to_url: https://en.wikipedia.org/wiki/Rust_(programming_language)",
+      "done: Extract influenced-by languages from infobox"
+    ]
+  },
+  {
+    "task": "Find the most voted answer for 'What is a NullPointerException' on Stack Overflow",
+    "steps": [
+      "go_to_url: https://stackoverflow.com/questions/218384/what-is-a-nullpointerexception-and-how-do-i-fix-it",
+      "done: Extract top answer summary"
+    ]
+  },
+  {
+    "task": "Search for how to read a file line by line in Python on Stack Overflow",
+    "steps": [
+      "go_to_url: https://stackoverflow.com",
+      "input_text: read file line by line python in search box",
+      "click_element: Search",
+      "click_element: First relevant result",
+      "done: Extract the accepted answer"
+    ]
+  },
+  {
+    "task": "Find the most upvoted Python questions on Stack Overflow",
+    "steps": [
+      "go_to_url: https://stackoverflow.com/questions/tagged/python?tab=votes",
+      "done: Extract top 5 question titles and vote counts"
+    ]
+  },
+  {
+    "task": "Find the top 3 headlines on BBC News today",
+    "steps": [
+      "go_to_url: https://www.bbc.com/news",
+      "done: Extract top 3 headline titles and summaries"
+    ]
+  },
+  {
+    "task": "Find the latest technology news on Reuters",
+    "steps": [
+      "go_to_url: https://www.reuters.com/technology/",
+      "done: Extract top 3 tech article titles and summaries"
+    ]
+  },
+  {
+    "task": "Check the top stories on NPR today",
+    "steps": [
+      "go_to_url: https://www.npr.org/sections/news/",
+      "done: Extract top story headlines"
+    ]
+  },
+  {
+    "task": "Find the documentation for JavaScript fetch API on MDN",
+    "steps": [
+      "go_to_url: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+      "done: Extract basic usage syntax and examples"
+    ]
+  },
+  {
+    "task": "Look up how to use Docker volumes in the Docker documentation",
+    "steps": [
+      "go_to_url: https://docs.docker.com/engine/storage/volumes/",
+      "done: Extract commands for creating and using volumes"
+    ]
+  },
+  {
+    "task": "Find the Flask quickstart guide on the official documentation",
+    "steps": [
+      "go_to_url: https://flask.palletsprojects.com/en/stable/quickstart/",
+      "done: Extract minimal app example and route setup"
+    ]
+  },
+  {
+    "task": "Look up the pandas DataFrame.merge documentation",
+    "steps": [
+      "go_to_url: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html",
+      "done: Extract parameters and usage examples"
+    ]
+  },
+  {
+    "task": "Find how to set up SSH keys in the GitHub docs",
+    "steps": [
+      "go_to_url: https://docs.github.com/en/authentication/connecting-to-github-with-ssh",
+      "click_element: Generating a new SSH key",
+      "done: Extract step-by-step instructions"
+    ]
+  },
+  {
+    "task": "Find the price of a Sony WH-1000XM5 headphone on Amazon",
+    "steps": [
+      "go_to_url: https://www.amazon.com",
+      "input_text: Sony WH-1000XM5 in search box",
+      "click_element: Search",
+      "click_element: First relevant product",
+      "done: Extract price and rating"
+    ]
+  },
+  {
+    "task": "Find the price of a MacBook Air M3 on the Apple Store",
+    "steps": [
+      "go_to_url: https://www.apple.com/shop/buy-mac/macbook-air",
+      "done: Extract starting price and configurations"
+    ]
+  },
+  {
+    "task": "Search for mechanical keyboards under $100 on Best Buy",
+    "steps": [
+      "go_to_url: https://www.bestbuy.com",
+      "input_text: mechanical keyboard in search box",
+      "click_element: Search",
+      "done: Extract top results with prices"
+    ]
+  },
+  {
+    "task": "Find the price of the Samsung Galaxy S24 Ultra on Samsung's website",
+    "steps": [
+      "go_to_url: https://www.samsung.com/us/smartphones/galaxy-s24-ultra/",
+      "done: Extract starting price and storage options"
+    ]
+  },
+  {
+    "task": "Look up the current deals on Walmart's electronics section",
+    "steps": [
+      "go_to_url: https://www.walmart.com/cp/electronics/3944",
+      "done: Extract featured deals with prices"
+    ]
+  },
+  {
+    "task": "Find the processing times for I-765 EAD application on USCIS",
+    "steps": [
+      "go_to_url: https://egov.uscis.gov/processing-times/",
+      "click_element: I-765 or EAD option",
+      "done: Extract current processing time range"
+    ]
+  },
+  {
+    "task": "Find the 2025 federal income tax brackets on the IRS website",
+    "steps": [
+      "go_to_url: https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2025",
+      "done: Extract tax brackets and rates"
+    ]
+  },
+  {
+    "task": "Find the passport renewal requirements on the US State Department website",
+    "steps": [
+      "go_to_url: https://travel.state.gov/content/travel/en/passports/have-passport/renew.html",
+      "done: Extract eligibility requirements and processing times"
+    ]
+  },
+  {
+    "task": "Find the current NBA standings on ESPN",
+    "steps": [
+      "go_to_url: https://www.espn.com/nba/standings",
+      "done: Extract top 5 teams in Eastern and Western conference"
+    ]
+  },
+  {
+    "task": "Find the score of the latest NFL Super Bowl on ESPN",
+    "steps": [
+      "go_to_url: https://www.espn.com",
+      "input_text: Super Bowl 2026 score in search box",
+      "click_element: Search",
+      "click_element: First relevant result",
+      "done: Extract final score and MVP"
+    ]
+  },
+  {
+    "task": "Check the Premier League top scorers this season",
+    "steps": [
+      "go_to_url: https://www.espn.com/soccer/stats/_/league/eng.1/season/2025",
+      "done: Extract top 5 scorers with goals"
+    ]
+  },
+  {
+    "task": "Find the symptoms of Type 2 Diabetes on Mayo Clinic",
+    "steps": [
+      "go_to_url: https://www.mayoclinic.org/diseases-conditions/type-2-diabetes/symptoms-causes/syc-20351193",
+      "done: Extract main symptoms list"
+    ]
+  },
+  {
+    "task": "Look up the recommended daily water intake on WebMD",
+    "steps": [
+      "go_to_url: https://www.webmd.com/diet/how-much-water-to-drink",
+      "done: Extract daily water intake recommendations"
+    ]
+  },
+  {
+    "task": "Find the Amtrak train schedule from DC to New York Penn Station",
+    "steps": [
+      "go_to_url: https://www.amtrak.com/home.html",
+      "input_text: Washington DC in from field",
+      "input_text: New York Penn Station in to field",
+      "click_element: Search or Find Trains",
+      "done: Extract departure times and prices"
+    ]
+  },
+  {
+    "task": "Find the cheapest hotel in Manhattan for next weekend on Booking.com",
+    "steps": [
+      "go_to_url: https://www.booking.com",
+      "input_text: Manhattan, New York in destination",
+      "click_element: Date picker for next weekend",
+      "click_element: Search",
+      "click_element: Sort by price",
+      "done: Extract cheapest hotel name and price"
+    ]
+  },
+  {
+    "task": "Check if there are any delays on the DC Metro system",
+    "steps": [
+      "go_to_url: https://www.wmata.com/service/status/",
+      "done: Extract current service alerts and delays"
+    ]
+  },
+  {
+    "task": "Find the top posts this week on r/machinelearning",
+    "steps": [
+      "go_to_url: https://www.reddit.com/r/MachineLearning/top/?t=week",
+      "done: Extract top 5 post titles and upvote counts"
+    ]
+  },
+  {
+    "task": "Find the top posts on r/LocalLLaMA about fine-tuning",
+    "steps": [
+      "go_to_url: https://www.reddit.com/r/LocalLLaMA/search/?q=fine-tuning",
+      "done: Extract top 5 post titles"
+    ]
+  },
+  {
+    "task": "Find the current price of Tesla stock on Yahoo Finance",
+    "steps": [
+      "go_to_url: https://finance.yahoo.com/quote/TSLA/",
+      "done: Extract current price, daily change, and market cap"
+    ]
+  },
+  {
+    "task": "Find the current price of Ethereum on CoinMarketCap",
+    "steps": [
+      "go_to_url: https://coinmarketcap.com/currencies/ethereum/",
+      "done: Extract current price and 24h change"
+    ]
+  },
+  {
+    "task": "Look up the S&P 500 performance this year on Google Finance",
+    "steps": [
+      "go_to_url: https://www.google.com/finance/quote/.INX:INDEXSP",
+      "done: Extract current value and YTD performance"
+    ]
+  },
+  {
+    "task": "Find the highest rated machine learning course on Udemy",
+    "steps": [
+      "go_to_url: https://www.udemy.com",
+      "input_text: machine learning in search box",
+      "click_element: Search",
+      "done: Extract top rated course name, instructor, and rating"
+    ]
+  },
+  {
+    "task": "Find free Python courses on edX",
+    "steps": [
+      "go_to_url: https://www.edx.org/search?q=python&tab=course",
+      "done: Extract top 3 free courses with providers"
+    ]
+  },
+  {
+    "task": "Look up the MIT OpenCourseWare page for Introduction to Algorithms",
+    "steps": [
+      "go_to_url: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+      "done: Extract course description and available materials"
+    ]
+  },
+  {
+    "task": "Find the system requirements for Cyberpunk 2077 on Steam",
+    "steps": [
+      "go_to_url: https://store.steampowered.com/app/1091500/Cyberpunk_2077/",
+      "scroll_down: to system requirements section",
+      "done: Extract minimum and recommended specs"
+    ]
+  },
+  {
+    "task": "Find the specs and price of the latest Raspberry Pi model",
+    "steps": [
+      "go_to_url: https://www.raspberrypi.com/products/",
+      "click_element: Latest Raspberry Pi model",
+      "done: Extract CPU, RAM, price, and connectivity specs"
+    ]
+  },
+  {
+    "task": "Look up the ingredients and nutrition for a Starbucks Caramel Macchiato",
+    "steps": [
+      "go_to_url: https://www.starbucks.com/menu/product/407/hot",
+      "done: Extract ingredients and calorie count"
+    ]
+  },
+  {
+    "task": "Find the hours and admission price for the Smithsonian National Museum of Natural History",
+    "steps": [
+      "go_to_url: https://naturalhistory.si.edu/visit",
+      "done: Extract opening hours and admission info"
+    ]
+  },
+  {
+    "task": "Find the nearest IKEA store to Washington DC and its hours",
+    "steps": [
+      "go_to_url: https://www.ikea.com/us/en/stores/",
+      "input_text: Washington DC in search box",
+      "click_element: Search or nearest result",
+      "done: Extract store address and hours"
+    ]
+  },
+  {
+    "task": "Look up the current wait times at the DMV in College Park MD",
+    "steps": [
+      "go_to_url: https://www.google.com/maps",
+      "input_text: DMV College Park MD",
+      "click_element: First DMV result",
+      "done: Extract address, hours, and any wait time info"
+    ]
+  },
+  {
+    "task": "Find the event calendar for the Kennedy Center this month",
+    "steps": [
+      "go_to_url: https://www.kennedy-center.org/whats-on/",
+      "done: Extract upcoming events with dates and times"
+    ]
+  },
+  {
+    "task": "Find the bus routes from College Park to downtown DC on Google Maps",
+    "steps": [
+      "go_to_url: https://www.google.com/maps/dir/College+Park+MD/Washington+DC",
+      "click_element: Transit option",
+      "done: Extract bus route options and travel times"
+    ]
+  },
+  {
+    "task": "Look up the menu for Sweetgreen near UMD College Park",
+    "steps": [
+      "go_to_url: https://www.sweetgreen.com/menu",
+      "done: Extract available bowls and prices"
+    ]
+  },
+  {
+    "task": "Find how to apply for a Maryland driver's license as a new resident",
+    "steps": [
+      "go_to_url: https://mva.maryland.gov/pages/drivers-licenses.aspx",
+      "click_element: New to Maryland or first-time applicant",
+      "done: Extract required documents and steps"
+    ]
+  },
+  {
+    "task": "Check the current air quality index for Washington DC",
+    "steps": [
+      "go_to_url: https://www.airnow.gov",
+      "input_text: Washington DC in search box",
+      "click_element: Search",
+      "done: Extract AQI value and health advisory"
+    ]
+  }
+]

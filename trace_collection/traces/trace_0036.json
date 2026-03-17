@@ -1,0 +1,49 @@
+{
+  "task": "Find how many citations a paper titled 'Attention is All You Need' has on Google Scholar",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='New Tab', evaluation_previous_goal='None', memory='None', next_goal='Go to Google Scholar'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://scholar.google.com'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://scholar.google.com/",
+        "title": "Google Scholar"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Google Scholar homepage', evaluation_previous_goal='Success - navigated to Google Scholar', memory='None', next_goal='Search for paper titled Attention is All You Need'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='Attention is All You Need'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://scholar.google.com/scholar?q=Attention+is+All+You+Need",
+        "title": "Google Scholar"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Search results for Attention is All You Need', evaluation_previous_goal='Success - searched for paper', memory='First result is the paper', next_goal='Click on the first result'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=1, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://scholar.google.com/scholar?q=Attention+is+All+You+Need&hl=en&as_sdt=0,5",
+        "title": "Attention Is All You Need - Google Scholar"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Paper page for Attention is All You Need', evaluation_previous_goal='Success - clicked on the paper', memory='Citations count is on the page', next_goal='Extract the citations count'",
+        "action": "[ActionModel(done=DoneAction(text='The paper Attention is All You Need has 59315 citations'))]"
+      },
+      "success": true
+    }
+  ]
+}

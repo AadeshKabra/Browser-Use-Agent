@@ -1,0 +1,60 @@
+{
+  "task": "Find the grading policy for a UMD CS course on the syllabus page",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='UMD CS course syllabus', next_goal='go to UMD CS department website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.cs.umd.edu/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.cs.umd.edu/",
+        "title": "Department of Computer Science"
+      },
+      "llm_output": {
+        "current_state": "page_summary='UMD CS department homepage', evaluation_previous_goal='Success - navigated to UMD CS website', memory='UMD CS course syllabus', next_goal='find course syllabus page'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.cs.umd.edu/courses",
+        "title": "Courses - Department of Computer Science"
+      },
+      "llm_output": {
+        "current_state": "page_summary='list of UMD CS courses', evaluation_previous_goal='Success - found courses page', memory='UMD CS course syllabus', next_goal='find specific course syllabus'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=20, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.cs.umd.edu/courses/syllabus_CMSC131",
+        "title": "CMSC 131 - Syllabus"
+      },
+      "llm_output": {
+        "current_state": "page_summary='CMSC 131 syllabus page', evaluation_previous_goal='Success - found course syllabus page', memory='grading policy', next_goal='extract grading policy'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.cs.umd.edu/courses/syllabus_CMSC131",
+        "title": "CMSC 131 - Syllabus"
+      },
+      "llm_output": {
+        "current_state": "page_summary='CMSC 131 syllabus page with grading policy visible', evaluation_previous_goal='Success - scrolled to grading policy section', memory='grading policy', next_goal='None'",
+        "action": "[ActionModel(done=DoneAction(text='The grading policy for CMSC 131 is 40% homework, 30% midterm, 30% final'))]"
+      },
+      "success": true
+    }
+  ]
+}

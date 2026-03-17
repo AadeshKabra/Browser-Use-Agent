@@ -1,0 +1,60 @@
+{
+  "task": "Find the office location of professor Hal Daume at UMD CS",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='UMD CS professor Hal Daume', next_goal='search for UMD CS faculty directory'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.google.com'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com",
+        "title": "Google"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Google homepage', evaluation_previous_goal='Success - navigated to Google', memory='UMD CS professor Hal Daume', next_goal='search for UMD CS faculty directory'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='UMD CS faculty directory'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com/search?q=UMD+CS+faculty+directory",
+        "title": "UMD CS faculty directory - Google Search"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Google search results', evaluation_previous_goal='Success - searched for UMD CS faculty directory', memory='UMD CS professor Hal Daume', next_goal='navigate to UMD CS faculty directory'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.cs.umd.edu/people/faculty'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.cs.umd.edu/people/faculty",
+        "title": "Faculty | Department of Computer Science"
+      },
+      "llm_output": {
+        "current_state": "page_summary='UMD CS faculty directory', evaluation_previous_goal='Success - navigated to UMD CS faculty directory', memory='UMD CS professor Hal Daume', next_goal='find Hal Daume office location'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=50, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.cs.umd.edu/people/faculty/hal-daume",
+        "title": "Hal Daum\u00e9 III | Department of Computer Science"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Hal Daume profile', evaluation_previous_goal='Success - found Hal Daume profile', memory='UMD CS professor Hal Daume', next_goal='extract office location'",
+        "action": "[ActionModel(done=DoneAction(text='AVW 3251'))]"
+      },
+      "success": true
+    }
+  ]
+}

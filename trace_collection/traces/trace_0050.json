@@ -1,0 +1,60 @@
+{
+  "task": "Find the schedule for the Washington Metro Green Line",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to Washington Metro website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.wmata.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.wmata.com/",
+        "title": "Washington Metropolitan Area Transit Authority"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Washington Metro homepage', evaluation_previous_goal='Success - navigated to website', memory='None', next_goal='click on Metro map and schedules'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.wmata.com/schedules/",
+        "title": "Schedules - Washington Metropolitan Area Transit Authority"
+      },
+      "llm_output": {
+        "current_state": "page_summary='schedules page', evaluation_previous_goal='Success - clicked on schedules', memory='Green Line', next_goal='click on Green Line schedule'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=20, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.wmata.com/schedules/timetables.cfm?line=GR",
+        "title": "Green Line Schedule - Washington Metropolitan Area Transit Authority"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Green Line schedule', evaluation_previous_goal='Success - clicked on Green Line', memory='None', next_goal='extract schedule information'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.wmata.com/schedules/timetables.cfm?line=GR",
+        "title": "Green Line Schedule - Washington Metropolitan Area Transit Authority"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Green Line schedule information', evaluation_previous_goal='Success - scrolled down', memory='schedule information', next_goal='done'",
+        "action": "[ActionModel(done=DoneAction(text='The Washington Metro Green Line schedule is available from 7:00 AM to 11:30 PM, Monday through Thursday, with headways of 10-15 minutes during peak hours.'))]"
+      },
+      "success": true
+    }
+  ]
+}

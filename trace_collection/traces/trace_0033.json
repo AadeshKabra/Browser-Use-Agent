@@ -1,0 +1,60 @@
+{
+  "task": "Check if Python 3.12 is available via apt on Ubuntu 24.04",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='New Tab', evaluation_previous_goal='None', memory='None', next_goal='Open Ubuntu package search page'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://packages.ubuntu.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://packages.ubuntu.com/",
+        "title": "Ubuntu \u2013 Package Search"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Ubuntu package search page', evaluation_previous_goal='Success - opened package search page', memory='None', next_goal='Search for Python 3.12'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='python3.12'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://packages.ubuntu.com/search?keywords=python3.12",
+        "title": "Ubuntu \u2013 Package Search"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Search results for python3.12', evaluation_previous_goal='Success - searched for python3.12', memory='python3.12 search results', next_goal='Check if Python 3.12 is available for Ubuntu 24.04'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=5, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://packages.ubuntu.com/jammy/python3.12",
+        "title": "Ubuntu \u2013 Package Search"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Python 3.12 package page', evaluation_previous_goal='Success - opened python3.12 package page', memory='python3.12 package page', next_goal='Determine availability of Python 3.12 on Ubuntu 24.04'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://packages.ubuntu.com/jammy/python3.12",
+        "title": "Ubuntu \u2013 Package Search"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Python 3.12 package page scrolled', evaluation_previous_goal='Success - scrolled python3.12 package page', memory='python3.12 package page', next_goal='Answer whether Python 3.12 is available on Ubuntu 24.04'",
+        "action": "[ActionModel(done=DoneAction(text='Python 3.12 is not available via apt on Ubuntu 24.04'))]"
+      },
+      "success": true
+    }
+  ]
+}

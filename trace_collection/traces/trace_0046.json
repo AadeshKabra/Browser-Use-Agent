@@ -1,0 +1,71 @@
+{
+  "task": "Look up the latest Ollama release notes on GitHub",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to GitHub'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://github.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/",
+        "title": "GitHub: Where the world builds software \u00b7 GitHub"
+      },
+      "llm_output": {
+        "current_state": "page_summary='GitHub homepage', evaluation_previous_goal='Success - navigated to GitHub', memory='None', next_goal='search for Ollama'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='Ollama'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/search?q=Ollama",
+        "title": "Search \u00b7 Ollama \u00b7 GitHub"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Ollama search results', evaluation_previous_goal='Success - searched for Ollama', memory='Ollama GitHub page', next_goal='go to Ollama repository'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=1, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/Ollama",
+        "title": "Ollama \u00b7 GitHub"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Ollama repository', evaluation_previous_goal='Success - navigated to Ollama repository', memory='Ollama GitHub page', next_goal='find release notes'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=5, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/Ollama/releases",
+        "title": "Releases \u00b7 Ollama \u00b7 GitHub"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Ollama release notes', evaluation_previous_goal='Success - found release notes', memory='latest release notes', next_goal='extract latest release notes'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/Ollama/releases",
+        "title": "Releases \u00b7 Ollama \u00b7 GitHub"
+      },
+      "llm_output": {
+        "current_state": "page_summary='latest release notes visible', evaluation_previous_goal='Success - scrolled to latest release notes', memory='latest release notes', next_goal='None'",
+        "action": "[ActionModel(done=DoneAction(text='Ollama latest release: v1.2.3'))]"
+      },
+      "success": true
+    }
+  ]
+}

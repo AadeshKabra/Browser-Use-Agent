@@ -1,8 +1,13 @@
 1. Overleaf MCP to update resume
 2. Gmail MCP to send mails
 3. Agent finetuned on writing perfect Cold-emails
+4. Database implementation
 
 Can we finetune ollama model on Web surfing instructions datasets to see if any improvement in performance?
 
-Few-shot prompting and later SFT
+Done - Few-shot prompting 
+SFT
+
+Generate input output pairs by running with kimik2.5:cloud model
+Use this input output pairs to train Qwen2.5:7b model
 

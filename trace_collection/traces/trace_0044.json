@@ -1,0 +1,49 @@
+{
+  "task": "Find the return policy on Amazon",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to Amazon'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.amazon.com'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.amazon.com",
+        "title": "Amazon"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Amazon homepage', evaluation_previous_goal='Success - navigated to Amazon', memory='None', next_goal='click on help'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.amazon.com/gp/help/main",
+        "title": "Help"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Amazon help page', evaluation_previous_goal='Success - clicked on help', memory='None', next_goal='click on returns'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=20, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.amazon.com/gp/returns",
+        "title": "Returns"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Amazon returns page', evaluation_previous_goal='Success - clicked on returns', memory='return window is 30 days', next_goal='done'",
+        "action": "[ActionModel(done=DoneAction(text='Amazon return policy allows for returns within 30 days'))]"
+      },
+      "success": true
+    }
+  ]
+}

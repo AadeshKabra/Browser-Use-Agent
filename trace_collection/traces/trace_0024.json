@@ -1,0 +1,49 @@
+{
+  "task": "Look up how to set up a virtual environment in Python 3.12",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='search for Python 3.12 virtual environment setup'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.google.com'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com",
+        "title": "Google"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Google homepage', evaluation_previous_goal='Success - navigated to Google', memory='None', next_goal='search for Python 3.12 virtual environment setup'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='Python 3.12 virtual environment setup'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.google.com/search?q=Python+3.12+virtual+environment+setup",
+        "title": "Python 3.12 virtual environment setup - Google Search"
+      },
+      "llm_output": {
+        "current_state": "page_summary='search results for Python 3.12 virtual environment setup', evaluation_previous_goal='Success - searched for Python 3.12 virtual environment setup', memory='https://docs.python.org/3/library/venv.html', next_goal='go to Python documentation for virtual environment setup'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://docs.python.org/3/library/venv.html'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://docs.python.org/3/library/venv.html",
+        "title": "venv \u2014 Creation of virtual environments \u2014 Python 3.12 documentation"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Python documentation for virtual environment setup', evaluation_previous_goal='Success - navigated to Python documentation', memory='python3.12 -m venv myenv', next_goal='extract the command to create a virtual environment'",
+        "action": "[ActionModel(done=DoneAction(text='python3.12 -m venv myenv'))]"
+      },
+      "success": true
+    }
+  ]
+}

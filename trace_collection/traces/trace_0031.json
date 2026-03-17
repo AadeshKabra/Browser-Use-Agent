@@ -1,0 +1,60 @@
+{
+  "task": "Look up the package details for browser-use on PyPI",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='New Tab', evaluation_previous_goal='None', memory='None', next_goal='Go to PyPI'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://pypi.org/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://pypi.org/",
+        "title": "PyPI"
+      },
+      "llm_output": {
+        "current_state": "page_summary='PyPI homepage', evaluation_previous_goal='Success - navigated to PyPI', memory='None', next_goal='Search for browser-use package'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='browser-use'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://pypi.org/search/?q=browser-use",
+        "title": "PyPI \u00b7 Search for browser-use"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Search results for browser-use', evaluation_previous_goal='Success - searched for browser-use', memory='browser-use package', next_goal='Click on the package result'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=1, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://pypi.org/project/browser-use/",
+        "title": "browser-use \u00b7 PyPI"
+      },
+      "llm_output": {
+        "current_state": "page_summary='browser-use package details', evaluation_previous_goal='Success - navigated to package page', memory='browser-use package', next_goal='Extract package details'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://pypi.org/project/browser-use/",
+        "title": "browser-use \u00b7 PyPI"
+      },
+      "llm_output": {
+        "current_state": "page_summary='browser-use package details', evaluation_previous_goal='Success - scrolled to package info', memory='browser-use package', next_goal='Done - extract package version'",
+        "action": "[ActionModel(done=DoneAction(text='The browser-use package version is 1.0.0'))]"
+      },
+      "success": true
+    }
+  ]
+}

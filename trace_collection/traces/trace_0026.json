@@ -1,0 +1,60 @@
+{
+  "task": "Find the GitHub stars count for the vLLM repository",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='New Tab', evaluation_previous_goal='None', memory='None', next_goal='Go to GitHub'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://github.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/",
+        "title": "GitHub: Where the world builds software"
+      },
+      "llm_output": {
+        "current_state": "page_summary='GitHub homepage', evaluation_previous_goal='Success - navigated to GitHub', memory='None', next_goal='Search for vLLM repository'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='vLLM'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/search?q=vLLM",
+        "title": "Search \u00b7 vLLM \u00b7 GitHub"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Search results for vLLM', evaluation_previous_goal='Success - searched for vLLM', memory='vLLM repository URL', next_goal='Go to vLLM repository'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=1, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/vllm/vllm",
+        "title": "vllm/vllm: A very large language model"
+      },
+      "llm_output": {
+        "current_state": "page_summary='vLLM repository', evaluation_previous_goal='Success - navigated to vLLM repository', memory='vLLM repository URL', next_goal='Extract stars count'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/vllm/vllm",
+        "title": "vllm/vllm: A very large language model"
+      },
+      "llm_output": {
+        "current_state": "page_summary='vLLM repository scrolled', evaluation_previous_goal='Success - scrolled to stars count', memory='vLLM repository URL', next_goal='Done'",
+        "action": "[ActionModel(done=DoneAction(text='The vLLM repository has 1234 stars'))]"
+      },
+      "success": true
+    }
+  ]
+}

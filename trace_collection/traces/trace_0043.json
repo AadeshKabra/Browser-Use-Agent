@@ -1,0 +1,60 @@
+{
+  "task": "What is the price of iPhone 16 Pro on Apple's website",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to Apple website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.apple.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.apple.com/",
+        "title": "Apple"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Apple homepage', evaluation_previous_goal='Success - navigated to Apple website', memory='None', next_goal='navigate to iPhone page'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=12, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.apple.com/iphone/",
+        "title": "iPhone - Apple"
+      },
+      "llm_output": {
+        "current_state": "page_summary='iPhone page', evaluation_previous_goal='Success - navigated to iPhone page', memory='None', next_goal='find iPhone 16 Pro price'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=43, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.apple.com/iphone/compare/",
+        "title": "iPhone Comparison - Apple"
+      },
+      "llm_output": {
+        "current_state": "page_summary='iPhone comparison page', evaluation_previous_goal='Success - navigated to iPhone comparison page', memory='iPhone 16 Pro', next_goal='extract price'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.apple.com/iphone/compare/",
+        "title": "iPhone Comparison - Apple"
+      },
+      "llm_output": {
+        "current_state": "page_summary='iPhone comparison page with prices', evaluation_previous_goal='Success - scrolled to prices', memory='iPhone 16 Pro', next_goal='get final answer'",
+        "action": "[ActionModel(done=DoneAction(text='The price of iPhone 16 Pro is $1,099'))]"
+      },
+      "success": true
+    }
+  ]
+}

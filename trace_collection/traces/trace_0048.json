@@ -1,0 +1,60 @@
+{
+  "task": "Look up the maximum file upload size for GitHub repositories",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='GitHub upload size', next_goal='go to GitHub help page'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://help.github.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://help.github.com/",
+        "title": "GitHub Help"
+      },
+      "llm_output": {
+        "current_state": "page_summary='GitHub help page', evaluation_previous_goal='Success - navigated to GitHub help page', memory='GitHub upload size', next_goal='search for upload size'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='maximum file upload size'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://help.github.com/search?q=maximum+file+upload+size",
+        "title": "Search results for 'maximum file upload size' - GitHub Help"
+      },
+      "llm_output": {
+        "current_state": "page_summary='search results for upload size', evaluation_previous_goal='Success - searched for upload size', memory='GitHub upload size', next_goal='click on relevant result'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=2, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://help.github.com/en/github/managing-large-files/working-with-large-files",
+        "title": "Working with large files - GitHub Help"
+      },
+      "llm_output": {
+        "current_state": "page_summary='large files help page', evaluation_previous_goal='Success - clicked on relevant result', memory='GitHub upload size', next_goal='find upload size'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://help.github.com/en/github/managing-large-files/working-with-large-files",
+        "title": "Working with large files - GitHub Help"
+      },
+      "llm_output": {
+        "current_state": "page_summary='scrolling through large files help page', evaluation_previous_goal='Success - scrolled through page', memory='GitHub upload size', next_goal='extract answer'",
+        "action": "[ActionModel(done=DoneAction(text='The maximum file upload size for GitHub repositories is 100MB for free accounts and 2GB for paid accounts.'))]"
+      },
+      "success": true
+    }
+  ]
+}

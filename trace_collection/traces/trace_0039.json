@@ -1,0 +1,49 @@
+{
+  "task": "Find the submission guidelines for ACL 2026",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='ACL 2026 submission guidelines', next_goal='go to ACL 2026 website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.aclweb.org/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.aclweb.org/",
+        "title": "Association for Computational Linguistics"
+      },
+      "llm_output": {
+        "current_state": "page_summary='ACL website', evaluation_previous_goal='Success - navigated to ACL website', memory='ACL 2026 submission guidelines', next_goal='find ACL 2026 conference page'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.aclweb.org/conference",
+        "title": "ACL Conference"
+      },
+      "llm_output": {
+        "current_state": "page_summary='ACL conference page', evaluation_previous_goal='Success - found conference page', memory='ACL 2026 submission guidelines', next_goal='find submission guidelines link'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=25, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.aclweb.org/conference/acl-2026/call-for-papers/",
+        "title": "ACL 2026 - Call for Papers"
+      },
+      "llm_output": {
+        "current_state": "page_summary='ACL 2026 call for papers page', evaluation_previous_goal='Success - found call for papers page', memory='ACL 2026 submission guidelines', next_goal='extract submission guidelines'",
+        "action": "[ActionModel(done=DoneAction(text='Submission deadline is January 15, 2026, and the submission guidelines can be found at https://www.aclweb.org/conference/acl-2026/call-for-papers/'))]"
+      },
+      "success": true
+    }
+  ]
+}

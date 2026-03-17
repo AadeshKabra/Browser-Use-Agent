@@ -1,0 +1,49 @@
+{
+  "task": "What is the deadline for NeurIPS 2025 paper submission",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='Need to find NeurIPS 2025 paper submission deadline', next_goal='Go to NeurIPS website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://neurips.cc'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://neurips.cc",
+        "title": "NeurIPS"
+      },
+      "llm_output": {
+        "current_state": "page_summary='NeurIPS homepage', evaluation_previous_goal='Success - navigated to NeurIPS website', memory='Need to find NeurIPS 2025 paper submission deadline', next_goal='Click on Call for Papers'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://neurips.cc/Conferences/2025/CallForPapers",
+        "title": "NeurIPS 2025 Call for Papers"
+      },
+      "llm_output": {
+        "current_state": "page_summary='NeurIPS 2025 Call for Papers', evaluation_previous_goal='Success - navigated to Call for Papers page', memory='Need to find NeurIPS 2025 paper submission deadline', next_goal='Find deadline in page content'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://neurips.cc/Conferences/2025/CallForPapers",
+        "title": "NeurIPS 2025 Call for Papers"
+      },
+      "llm_output": {
+        "current_state": "page_summary='NeurIPS 2025 Call for Papers with deadline', evaluation_previous_goal='Success - found deadline', memory='NeurIPS 2025 paper submission deadline is May 10, 2025', next_goal='Extract deadline as final answer'",
+        "action": "[ActionModel(done=DoneAction(text='The deadline for NeurIPS 2025 paper submission is May 10, 2025'))]"
+      },
+      "success": true
+    }
+  ]
+}

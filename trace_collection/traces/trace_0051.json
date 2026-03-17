@@ -1,0 +1,49 @@
+{
+  "task": "Find the LinkedIn profile of a company called Modular AI",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Blank page', evaluation_previous_goal='None', memory='Company name: Modular AI', next_goal='Search for Modular AI on LinkedIn'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.linkedin.com'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.linkedin.com",
+        "title": "LinkedIn: Log In or Sign Up"
+      },
+      "llm_output": {
+        "current_state": "page_summary='LinkedIn homepage', evaluation_previous_goal='Success - navigated to LinkedIn', memory='Company name: Modular AI', next_goal='Search for Modular AI'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='Modular AI'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.linkedin.com/search/results/people/?keywords=Modular%20AI",
+        "title": "Modular AI | LinkedIn"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Search results for Modular AI', evaluation_previous_goal='Success - searched for Modular AI', memory='Company name: Modular AI', next_goal='Click on the company profile'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=2, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.linkedin.com/company/modular-ai/",
+        "title": "Modular AI | Company | LinkedIn"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Modular AI company profile', evaluation_previous_goal='Success - navigated to company profile', memory='Company name: Modular AI', next_goal='Extract the company description'",
+        "action": "[ActionModel(done=DoneAction(text='Modular AI is a company that specializes in developing artificial intelligence solutions.'))]"
+      },
+      "success": true
+    }
+  ]
+}

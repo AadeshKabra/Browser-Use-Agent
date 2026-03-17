@@ -1,0 +1,60 @@
+{
+  "task": "Look up the review score for a restaurant called Moby Dick on Yelp",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to Yelp'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.yelp.com'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.yelp.com",
+        "title": "Yelp"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Yelp homepage', evaluation_previous_goal='Success - navigated to Yelp', memory='looking for Moby Dick review score', next_goal='search for Moby Dick'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='Moby Dick'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.yelp.com/search?find_desc=Moby+Dick",
+        "title": "Moby Dick - Yelp"
+      },
+      "llm_output": {
+        "current_state": "page_summary='search results for Moby Dick', evaluation_previous_goal='Success - searched for Moby Dick', memory='looking for review score', next_goal='click on Moby Dick result'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=2, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.yelp.com/biz/moby-dick-los-angeles",
+        "title": "Moby Dick - Los Angeles, CA - Yelp"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Moby Dick business page', evaluation_previous_goal='Success - clicked on Moby Dick result', memory='None', next_goal='find review score'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.yelp.com/biz/moby-dick-los-angeles",
+        "title": "Moby Dick - Los Angeles, CA - Yelp"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Moby Dick business page with reviews', evaluation_previous_goal='Success - scrolled down', memory='None', next_goal='extract review score'",
+        "action": "[ActionModel(done=DoneAction(text='Moby Dick has a 4/5 star review score on Yelp'))]"
+      },
+      "success": true
+    }
+  ]
+}

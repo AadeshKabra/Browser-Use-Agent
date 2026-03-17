@@ -1,0 +1,17 @@
+{
+  "task": "What is the capital of India?",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "",
+        "elements": "<body> [top]"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Processing' evaluation_previous_goal='Processing' memory='Processing' next_goal='Processing'",
+        "action": "[ActionModel(done=DoneAction(text='I am ready to assist you. Please provide a URL or a search query to begin.'), search_google=None, go_to_url=None, go_back=None, click_element=None, input_text=None, switch_tab=None, open_tab=None, extract_content=None, scroll_down=None, scroll_up=None, send_keys=None, scroll_to_text=None, get_dropdown_options=None, select_dropdown_option=None)]"
+      },
+      "success": true
+    }
+  ]
+}

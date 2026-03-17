@@ -1,0 +1,60 @@
+{
+  "task": "Find the documentation for Python's asyncio library",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to Python documentation'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://docs.python.org/3/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://docs.python.org/3/",
+        "title": "Python 3.x documentation"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Python documentation index', evaluation_previous_goal='Success - navigated to Python documentation', memory='None', next_goal='find asyncio library documentation'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://docs.python.org/3/library/index.html",
+        "title": "Python 3.x Library Index"
+      },
+      "llm_output": {
+        "current_state": "page_summary='library index page', evaluation_previous_goal='Success - clicked on library index', memory='None', next_goal='find asyncio link'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=50, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://docs.python.org/3/library/asyncio.html",
+        "title": "asyncio \u2014 Asynchronous I/O"
+      },
+      "llm_output": {
+        "current_state": "page_summary='asyncio library documentation', evaluation_previous_goal='Success - found asyncio link', memory='None', next_goal='extract introduction'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://docs.python.org/3/library/asyncio.html",
+        "title": "asyncio \u2014 Asynchronous I/O"
+      },
+      "llm_output": {
+        "current_state": "page_summary='asyncio introduction', evaluation_previous_goal='Success - scrolled to introduction', memory='asyncio is a library for asynchronous I/O', next_goal='done'",
+        "action": "[ActionModel(done=DoneAction(text='The asyncio library provides support for asynchronous I/O, event loops, and concurrency.'))]"
+      },
+      "success": true
+    }
+  ]
+}

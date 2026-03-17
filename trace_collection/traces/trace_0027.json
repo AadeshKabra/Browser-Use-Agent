@@ -1,0 +1,60 @@
+{
+  "task": "Find the API pricing for OpenAI GPT-4o",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='Blank page', evaluation_previous_goal='None', memory='None', next_goal='Go to OpenAI website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://openai.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://openai.com/",
+        "title": "OpenAI"
+      },
+      "llm_output": {
+        "current_state": "page_summary='OpenAI homepage', evaluation_previous_goal='Success - navigated to OpenAI website', memory='None', next_goal='Navigate to pricing page'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://openai.com/pricing",
+        "title": "Pricing - OpenAI"
+      },
+      "llm_output": {
+        "current_state": "page_summary='OpenAI pricing page', evaluation_previous_goal='Success - navigated to pricing page', memory='GPT-4', next_goal='Find GPT-4 pricing'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://openai.com/pricing",
+        "title": "Pricing - OpenAI"
+      },
+      "llm_output": {
+        "current_state": "page_summary='GPT-4 pricing section', evaluation_previous_goal='Success - scrolled to GPT-4 section', memory='GPT-4 pricing', next_goal='Extract GPT-4 pricing info'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=50, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://openai.com/pricing",
+        "title": "Pricing - OpenAI"
+      },
+      "llm_output": {
+        "current_state": "page_summary='GPT-4 pricing details', evaluation_previous_goal='Success - clicked on GPT-4 pricing', memory='GPT-4 $0.01 per 1k tokens', next_goal='Done'",
+        "action": "[ActionModel(done=DoneAction(text='The API pricing for OpenAI GPT-4 is $0.01 per 1k tokens'))]"
+      },
+      "success": true
+    }
+  ]
+}

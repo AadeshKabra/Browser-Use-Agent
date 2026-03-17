@@ -1,0 +1,60 @@
+{
+  "task": "Check the status of a USPS package with a given tracking number",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='tracking number: 1234567890', next_goal='go to USPS website'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.usps.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.usps.com/",
+        "title": "USPS.com"
+      },
+      "llm_output": {
+        "current_state": "page_summary='USPS homepage', evaluation_previous_goal='Success - navigated to USPS website', memory='tracking number: 1234567890', next_goal='click on track package'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.usps.com/shop/tracking.htm",
+        "title": "Track & Confirm | USPS"
+      },
+      "llm_output": {
+        "current_state": "page_summary='track package page', evaluation_previous_goal='Success - clicked on track package', memory='tracking number: 1234567890', next_goal='enter tracking number'",
+        "action": "[ActionModel(input_text=InputTextAction(index=5, text='1234567890'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.usps.com/shop/tracking.htm",
+        "title": "Track & Confirm | USPS"
+      },
+      "llm_output": {
+        "current_state": "page_summary='tracking number entered', evaluation_previous_goal='Success - entered tracking number', memory='tracking number: 1234567890', next_goal='click on track package button'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=15, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.usps.com/mypreference/trackpackages/results",
+        "title": "Tracking Results | USPS"
+      },
+      "llm_output": {
+        "current_state": "page_summary='tracking results', evaluation_previous_goal='Success - clicked on track package button', memory='tracking number: 1234567890', next_goal='get package status'",
+        "action": "[ActionModel(done=DoneAction(text='Package is out for delivery'))]"
+      },
+      "success": true
+    }
+  ]
+}

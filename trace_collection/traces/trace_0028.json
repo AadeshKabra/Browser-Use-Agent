@@ -1,0 +1,60 @@
+{
+  "task": "Find the top-rated Python IDE extensions on VS Code marketplace",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to VS Code marketplace'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://marketplace.visualstudio.com/'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://marketplace.visualstudio.com/",
+        "title": "VS Code Marketplace"
+      },
+      "llm_output": {
+        "current_state": "page_summary='VS Code marketplace homepage', evaluation_previous_goal='Success - navigated to VS Code marketplace', memory='looking for Python IDE extensions', next_goal='search for Python IDE extensions'",
+        "action": "[ActionModel(input_text=InputTextAction(index=1, text='Python IDE'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://marketplace.visualstudio.com/search?term=Python+IDE",
+        "title": "VS Code Marketplace"
+      },
+      "llm_output": {
+        "current_state": "page_summary='search results for Python IDE extensions', evaluation_previous_goal='Success - searched for Python IDE extensions', memory='need to find top-rated extensions', next_goal='sort by rating and find top-rated extensions'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=12, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://marketplace.visualstudio.com/search?term=Python+IDE&sortBy=Rating",
+        "title": "VS Code Marketplace"
+      },
+      "llm_output": {
+        "current_state": "page_summary='top-rated Python IDE extensions', evaluation_previous_goal='Success - sorted by rating', memory='found top-rated extensions', next_goal='extract top-rated extension names'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://marketplace.visualstudio.com/search?term=Python+IDE&sortBy=Rating",
+        "title": "VS Code Marketplace"
+      },
+      "llm_output": {
+        "current_state": "page_summary='top-rated Python IDE extensions', evaluation_previous_goal='Success - scrolled down', memory='found top-rated extensions', next_goal='done with task'",
+        "action": "[ActionModel(done=DoneAction(text='The top-rated Python IDE extensions are Python, PyCharm, and Pylance'))]"
+      },
+      "success": true
+    }
+  ]
+}

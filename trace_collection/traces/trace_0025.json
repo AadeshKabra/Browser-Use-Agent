@@ -1,0 +1,60 @@
+{
+  "task": "Find the top trending repositories on GitHub today",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to GitHub'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://github.com'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com",
+        "title": "GitHub: Where the world builds software \u00b7 GitHub"
+      },
+      "llm_output": {
+        "current_state": "page_summary='GitHub homepage', evaluation_previous_goal='Success - navigated to GitHub', memory='None', next_goal='click on Explore'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/explore",
+        "title": "GitHub Explore"
+      },
+      "llm_output": {
+        "current_state": "page_summary='GitHub Explore page', evaluation_previous_goal='Success - navigated to Explore', memory='None', next_goal='click on Trending'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=20, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/trending",
+        "title": "GitHub Trending"
+      },
+      "llm_output": {
+        "current_state": "page_summary='GitHub Trending page', evaluation_previous_goal='Success - navigated to Trending', memory='top trending repositories', next_goal='extract info'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://github.com/trending",
+        "title": "GitHub Trending"
+      },
+      "llm_output": {
+        "current_state": "page_summary='GitHub Trending page with scrolled content', evaluation_previous_goal='Success - scrolled down', memory='top trending repositories', next_goal='done'",
+        "action": "[ActionModel(done=DoneAction(text='The top trending repositories on GitHub today are: tensorflow, pytorch, and facebook/react'))]"
+      },
+      "success": true
+    }
+  ]
+}

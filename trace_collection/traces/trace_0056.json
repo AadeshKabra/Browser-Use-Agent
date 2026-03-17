@@ -1,0 +1,71 @@
+{
+  "task": "Search for remote ML engineer internships on LinkedIn",
+  "steps": [
+    {
+      "browser_state": {
+        "url": "about:blank",
+        "title": "New Tab"
+      },
+      "llm_output": {
+        "current_state": "page_summary='blank page', evaluation_previous_goal='None', memory='None', next_goal='go to LinkedIn'",
+        "action": "[ActionModel(go_to_url=GoToUrlAction(url='https://www.linkedin.com'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.linkedin.com",
+        "title": "LinkedIn: Log In or Sign Up"
+      },
+      "llm_output": {
+        "current_state": "page_summary='LinkedIn homepage', evaluation_previous_goal='Success - navigated to LinkedIn', memory='None', next_goal='click on jobs tab'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=10, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.linkedin.com/jobs/",
+        "title": "Job Search | LinkedIn"
+      },
+      "llm_output": {
+        "current_state": "page_summary='LinkedIn jobs page', evaluation_previous_goal='Success - navigated to jobs tab', memory='None', next_goal='search for remote ML engineer internships'",
+        "action": "[ActionModel(input_text=InputTextAction(index=5, text='remote ML engineer internships'))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.linkedin.com/jobs/search/?keywords=remote%20ML%20engineer%20internships",
+        "title": "Remote ML Engineer Internship Jobs | LinkedIn"
+      },
+      "llm_output": {
+        "current_state": "page_summary='search results for remote ML engineer internships', evaluation_previous_goal='Success - searched for remote ML engineer internships', memory='None', next_goal='extract info from first result'",
+        "action": "[ActionModel(click_element=ClickElementAction(index=20, xpath=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.linkedin.com/jobs/view/1234567890/",
+        "title": "Remote ML Engineer Internship at ABC Company | LinkedIn"
+      },
+      "llm_output": {
+        "current_state": "page_summary='first search result', evaluation_previous_goal='Success - clicked on first result', memory='ABC Company', next_goal='get the job description'",
+        "action": "[ActionModel(scroll_down=ScrollAction(amount=None))]"
+      },
+      "success": true
+    },
+    {
+      "browser_state": {
+        "url": "https://www.linkedin.com/jobs/view/1234567890/",
+        "title": "Remote ML Engineer Internship at ABC Company | LinkedIn"
+      },
+      "llm_output": {
+        "current_state": "page_summary='job description', evaluation_previous_goal='Success - scrolled down', memory='ABC Company', next_goal='Done'",
+        "action": "[ActionModel(done=DoneAction(text='The first remote ML engineer internship is at ABC Company'))]"
+      },
+      "success": true
+    }
+  ]
+}
