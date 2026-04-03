@@ -206,5 +206,25 @@
   {
     "prompt": "What is the email id of Prof. Zhicheng Liu from UMD?",
     "answer": "Professor Zhicheng Liu's email is leozcliu@umd.edu"
+  },
+  {
+    "prompt": "what is the email id of professor zhicheng liu from UMD?",
+    "answer": "Professor Zhicheng Liu's email is leozcliu@umd.edu"
+  },
+  {
+    "prompt": "what is the email id of professor zhicheng liu from UMD?",
+    "answer": "leozcliu@umd.edu"
+  },
+  {
+    "prompt": "Fetch the email id of Prof. Jordan boyd from UMD?",
+    "answer": "Successfully navigated to https://www.cs.umd.edu/people/faculty. The UMD Department of Computer Science faculty page is now loaded, displaying faculty listings with photos, names, titles, and research areas. The page includes search functionality and filters for Research Area and Faculty Title."
+  },
+  {
+    "prompt": "Fetch me the email address of Jordan graber from UMD?",
+    "answer": "Successfully navigated to https://www.cs.umd.edu/people/faculty. The page displays the CS Faculty directory from the University of Maryland Department of Computer Science, showing faculty members with their photos, names, titles, and research areas."
+  },
+  {
+    "prompt": "Find me email address of Prof. Zhicheng Liu from UMD?",
+    "answer": "Prof. Zhicheng Liu's email address is leozcliu@umd.edu"
   }
 ]

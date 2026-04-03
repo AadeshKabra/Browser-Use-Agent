@@ -1,56 +1,45 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from flask import Flask, render_template, request, jsonify
 from browser_use import Agent, Browser, SystemPrompt
 from browser_use.agent.service import Agent
 from browser_use.agent.views import AgentOutput
 from browser_use.browser.browser import BrowserConfig
 from langchain_ollama import ChatOllama
 from langchain_core.messages import BaseMessage
-from collections import deque
-from threading import Lock
-import random
-from few_shot import FEW_SHOT_EXAMPLES
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import Flow
-from dotenv import load_dotenv
-import os
-from starlette.responses import JSONResponse, RedirectResponse
-import requests
+import asyncio
 import nest_asyncio
 nest_asyncio.apply()
-import asyncio
+import json
+import re         
+import logging     
+import inspect
+import time
+from collections import deque
+from threading import Lock
+from few_shot import FEW_SHOT_EXAMPLES
+from trace_collection.collect_traces import save_trace
+import random
+import warnings
 
 
-app = FastAPI()
 
-origins = ["http://localhost:5173"]
-app.add_middleware(
-    CORSMiddleware, 
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app = Flask(__name__)
 
-SYSTEM_PROMPT = """You are a people-finding assistant for cold outreach. Follow these rules:
+logger = logging.getLogger(__name__)
+warnings.filterwarnings("ignore", message="unclosed transport")
+SYSTEM_PROMPT = """You are a web research assistant. Follow these rules:
 
-1. Go to Google and search for the person, role, or company.
-2. Look for LinkedIn profiles, company team pages, or about pages.
-3. Extract names, titles, and email patterns.
-4. Present results clearly and say done. Do NOT over-browse.
+1. If the user provides a URL, go directly to that URL.
+2. If no URL is provided, go to https://www.google.com and search for relevant keywords to find the right webpage.
+3. Always proceed with your best judgment.
+4. Extract the requested information thoroughly and accurately.
+5. When you have collected all the information, present it clearly and say done.
 """
 
+
 llm = ChatOllama(model="kimi-k2.5:cloud", temperature=0.4)
+
 live_memory = deque(maxlen=100)
 memory_lock = Lock()
-load_dotenv()
-
-CLIENT_SECRET_FILE = os.getenv("CLIENT_SECRET_FILE")
-CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-SCOPES = ['openid', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile']
-
-oauth_states = {}
 
 
 class CustomSystemPrompt(SystemPrompt):
@@ -142,16 +131,39 @@ def memory_callback(data):
         live_memory.append(data)
 
 
+def generate_subtasks(question):
+    # few_shot_string = format_few_shot_examples(FEW_SHOT_EXAMPLES)
+
+    selected_few_shots = select_examples(question, 3, True)
+    # print(selected_few_shots)
+    few_shot_string = format_few_shot_examples(selected_few_shots)
+    # print(few_shot_string)
+    prompt = f"""You are a browser agent. Complete tasks efficiently in as few steps as possible.
+    Go directly to relevant URLs when possible instead of searching Google.
+
+    {few_shot_string}
+
+    Now complete this task efficiently:
+    Task: {question}
+    """
+    response = llm.invoke(prompt)
+    # print("Response: ", response.content)
+    return response.content
+
+
 async def run_agent(task):
     with memory_lock:
         live_memory.clear()
 
     browser = Browser(config=BrowserConfig(headless=True))
-
+    # prompt = generate_subtasks(task)
+    # print("Prompt: ", prompt)
     selected_few_shots = select_examples(task, 3, True)
+    # print(selected_few_shots)
     few_shot_string = format_few_shot_examples(selected_few_shots)
 
     live_traces = []
+    print("Just before calling the agent")
     agent = Agent(
         llm=llm, 
         task=task,
@@ -173,61 +185,83 @@ async def run_agent(task):
                     "action": str(model_output.action) if hasattr(model_output, 'action') else None,
                 })
 
+
     agent.register_new_step_callback = on_step
 
-    result = await agent.run()
 
+    result = await agent.run()
+    # await browser.close()
     return task, result, agent, live_traces
 
 
-@app.get("/")
-def root():
-    return {"Hello World"}
+
+@app.route("/")
+def main():
+    return render_template("index.html")
 
 
-@app.get("/callback")
-async def callback(code, state):
-    # if request.args.get('state') != session['state']:
-    #     raise Exception('Invalid state')
 
-    if state != oauth_states.get('state'):
-        return {"error": "Invalid state"}
+@app.route("/chat", methods=["POST"])
+def chat():
+    message = request.json.get('message')
+    # task = "Go to https://www.cs.umd.edu/people/faculty and Fetch me the name and possibly the website of the research lab run by professor Zhicheng Liu"
+    task, result, agent, trace_steps = asyncio.run(run_agent(message))
+
+    if result.final_result() and trace_steps:
+        try:
+            save_trace(message, trace_steps)
+        except Exception as e:
+            print(f"Failed to save trace: {e}")
+
+    memory_log = []
+    for i, step in enumerate(result.history):
+        if step.model_output:
+            memory_log.append({
+                "step": i,
+                "memory": str(step.model_output.current_state) if step.model_output.current_state else None,
+                "action": str(step.model_output.action) if step.model_output.action else None,
+            })
+
+    prompt_object = {
+        "prompt": task,
+        "answer": str(result.final_result()),
+    }
+
+    try:
+        with open("tests.json", "r") as f:
+            data = json.load(f)
+    except:
+        data = []
+
+    data.append(prompt_object)
+    with open("tests.json", "w") as f:
+        json.dump(data, f, indent=2)
+
+    return jsonify({"response": str(result.final_result())})
+
+
+@app.route("/memory", methods=["GET"])
+def get_memory():
+    with memory_lock:
+        return jsonify({"memory": list(live_memory)})
     
-    flow = Flow.from_client_secrets_file(CLIENT_SECRET_FILE, scopes=SCOPES, state=state)
-    flow.redirect_uri = "http://localhost:8000/callback"
-    flow.fetch_token(code=code)
 
-    credentials = flow.credentials
+@app.route("/memory/stream")
+def stream_memory():
+    def generate():
+        last_index = 0
+        while True:
+            with memory_lock:
+                if len(live_memory) > last_index:
+                    for item in list(live_memory)[last_index:]: 
+                        yield f"data: {json.dumps(item)}\n\n"
+                    last_index = len(live_memory)
 
-    user_info = requests.get(
-        "https://www.googleapis.com/oauth2/v3/userinfo",
-        headers={"Authorization": f"Bearer {credentials.token}"}
-    ).json()
-
-    name = user_info.get("name", "")
-    email = user_info.get("email", "")
+            time.sleep(0.5)
     
-    return RedirectResponse(
-        f"http://localhost:5173/?name={name}&email={email}"
-    )
+    return app.response_class(generate(), mimetype='text/event-stream') 
 
 
-@app.get("/auth/google")
-def google_login():
-    flow = Flow.from_client_secrets_file(CLIENT_SECRET_FILE, scopes=SCOPES)
-    flow.redirect_uri = "http://localhost:8000/callback"
-    authorization_url, state = flow.authorization_url(access_type='offline', prompt='select_account')
-    oauth_states['state'] = state
+if __name__ == "__main__":
+    app.run(debug=True, threaded=True)
 
-    return RedirectResponse(authorization_url)
-
-
-@app.post("/processQuery")
-async def process_query(query: str):
-    print(query)
-
-    task, result, agent, trace_steps = asyncio.run(run_agent(query))
-    print(result.final_result())
-
-    # return {"result": "Processing query"}
-    return JSONResponse({"result": result.final_result(), "trace": trace_steps})
