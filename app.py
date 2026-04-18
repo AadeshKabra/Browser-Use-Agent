@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from browser_use import Agent, Browser, SystemPrompt
+from browser_use import Browser, SystemPrompt
 from browser_use.agent.service import Agent
 from browser_use.agent.views import AgentOutput
 from browser_use.browser.browser import BrowserConfig
@@ -19,38 +19,10 @@ import requests
 import nest_asyncio
 nest_asyncio.apply()
 import asyncio
-
-
-app = FastAPI()
-
-origins = ["http://localhost:5173"]
-app.add_middleware(
-    CORSMiddleware, 
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-SYSTEM_PROMPT = """You are a people-finding assistant for cold outreach. Follow these rules:
-
-1. Go to Google and search for the person, role, or company.
-2. Look for LinkedIn profiles, company team pages, or about pages.
-3. Extract names, titles, and email patterns.
-4. Present results clearly and say done. Do NOT over-browse.
-"""
-
-llm = ChatOllama(model="kimi-k2.5:cloud", temperature=0.4)
-live_memory = deque(maxlen=100)
-memory_lock = Lock()
-load_dotenv()
-
-CLIENT_SECRET_FILE = os.getenv("CLIENT_SECRET_FILE")
-CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-SCOPES = ['openid', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile']
-
-oauth_states = {}
+from datetime import datetime, timezone
+from urllib.parse import quote, quote_plus
+from pymongo import MongoClient
+from pymongo.errors import OperationFailure
 
 
 class CustomSystemPrompt(SystemPrompt):
@@ -62,6 +34,69 @@ class CustomSystemPrompt(SystemPrompt):
     def important_rules(self):
         existing = super().important_rules()
         return existing + "\n" + SYSTEM_PROMPT + "\n" + self.task_examples
+
+
+def _env_str(key: str) -> str:
+    v = os.getenv(key)
+    return (v or "").strip()
+
+
+def _mongo_connection_uri() -> str | None:
+    user = _env_str("MONGODB_USERNAME")
+    password = _env_str("MONGODB_PASSWORD")
+    host = _env_str("MONGODB_HOST")
+    if user and password and host:
+        return (
+            f"mongodb+srv://{quote_plus(user)}:{quote_plus(password)}@{host}/"
+            "?retryWrites=true&w=majority"
+        )
+    uri = _env_str("MONGODB_CONNECTION_STRING")
+    return uri or None
+
+
+def upsert_user_from_oauth(user_info: dict) -> bool:
+    if users_collection is None:
+        raise RuntimeError(
+            "MongoDB is not configured. Set MONGODB_USERNAME, MONGODB_PASSWORD, and "
+            "MONGODB_HOST, or set MONGODB_CONNECTION_STRING."
+        )
+
+    email = (user_info.get("email") or "").strip()
+    if not email:
+        raise ValueError("Google userinfo did not include an email")
+
+    google_sub = user_info.get("sub")
+    name = user_info.get("name") or ""
+    picture = user_info.get("picture") or ""
+
+    now = datetime.now(timezone.utc)
+    try:
+        result = users_collection.update_one(
+            {"email": email},
+            {
+                "$setOnInsert": {
+                    "email": email,
+                    "google_sub": google_sub,
+                    "name": name,
+                    "picture": picture,
+                    "created_at": now,
+                }
+            },
+            upsert=True,
+        )
+    except OperationFailure as exc:
+        err = str(exc).lower()
+        if getattr(exc, "code", None) == 8000 or "bad auth" in err or "authentication failed" in err:
+            raise RuntimeError(
+                "MongoDB Atlas rejected the database username or password. In Atlas, open "
+                "Database Access → your user → Edit Password, then update MONGODB_PASSWORD "
+                "(and MONGODB_CONNECTION_STRING if you use it). If the password contains "
+                "@ : / ? # % or spaces, use MONGODB_USERNAME, MONGODB_PASSWORD, and "
+                "MONGODB_HOST in .env so the app can encode them correctly."
+            ) from exc
+        raise
+
+    return result.upserted_id is not None
 
 
 def classify_task(query):
@@ -180,6 +215,48 @@ async def run_agent(task):
     return task, result, agent, live_traces
 
 
+app = FastAPI()
+
+origins = ["http://localhost:5173"]
+app.add_middleware(
+    CORSMiddleware, 
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+SYSTEM_PROMPT = """You are a people-finding assistant for cold outreach. Follow these rules:
+
+1. Go to Google and search for the person, role, or company.
+2. Look for LinkedIn profiles, company team pages, or about pages.
+3. Extract names, titles, and email patterns.
+4. Present results clearly and say done. Do NOT over-browse.
+"""
+
+llm = ChatOllama(model="kimi-k2.5:cloud", temperature=0.4)
+live_memory = deque(maxlen=100)
+memory_lock = Lock()
+load_dotenv()
+
+CLIENT_SECRET_FILE = os.getenv("CLIENT_SECRET_FILE")
+CLIENT_ID = os.getenv("CLIENT_ID")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+SCOPES = ['openid', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile']
+
+oauth_states = {}
+
+_mongo_uri = _mongo_connection_uri()
+mongo_client = (
+    MongoClient(_mongo_uri, serverSelectionTimeoutMS=10_000) if _mongo_uri else None
+)
+mongo_db = mongo_client["reacher"] if mongo_client else None
+users_collection = mongo_db["users"] if mongo_db else None
+
+
+
+
+
 @app.get("/")
 def root():
     return {"Hello World"}
@@ -206,10 +283,16 @@ async def callback(code, state):
 
     name = user_info.get("name", "")
     email = user_info.get("email", "")
-    
-    return RedirectResponse(
-        f"http://localhost:5173/?name={name}&email={email}"
+
+    try:
+        is_new = upsert_user_from_oauth(user_info)
+    except (RuntimeError, ValueError) as e:
+        return JSONResponse({"error": str(e)}, status_code=500)
+
+    q = (
+        f"name={quote(name)}&email={quote(email)}&is_new={'true' if is_new else 'false'}"
     )
+    return RedirectResponse(f"http://localhost:5173/?{q}")
 
 
 @app.get("/auth/google")
